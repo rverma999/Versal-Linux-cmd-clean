@@ -13,7 +13,7 @@
 //// In include.h
 
 #ifndef mult_X
-#define mult_X 1  // Default if not provided
+#define mult_X 2  // Default if not provided
 #endif
 
 #ifndef mult_Y

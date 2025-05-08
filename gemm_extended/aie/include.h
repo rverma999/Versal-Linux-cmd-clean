@@ -21,17 +21,16 @@ SPDX-License-Identifier: X11
 #define CLASSIFIER_OUTPUT_SAMPLES (POLAR_CLIP_OUTPUT_SAMPLES)
 #define CLASSIFIER_OUTPUT_BLOCK_SIZE (CLASSIFIER_OUTPUT_SAMPLES * 4)
 
-// In include.h
-#ifndef mult_X
-#define mult_X 1  // Default if not provided
-#endif
-
-#ifndef mult_Y
-#define mult_Y 1
-#endif
-
-#ifndef mult_Z
-#define mult_Z 1
-#endif
+//#ifndef mult_X
+//#define mult_X 4  // Default if not provided
+//#endif
+//
+//#ifndef mult_Y
+//#define mult_Y 1
+//#endif
+//
+//#ifndef mult_Z
+//#define mult_Z 1
+//#endif
 
 #endif /**********__INCLUDE_H__**********/
