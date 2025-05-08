@@ -1,0 +1,14 @@
+[
+  {
+    "directory": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean/gemm_extended",
+    "arguments": [
+      "/tools/Xilinx/Vitis_HLS/2024.1/vcxx/libexec/clang++",
+      "-fhls",
+      "-hls-syn-headers-dir=/tools/Xilinx/Vitis_HLS/2024.1/common/technology/autopilot",
+      "-I.",
+      "-c",
+      "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean/gemm_extended/pl_kernels/s2mm.cpp"
+    ],
+    "file": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean/gemm_extended/pl_kernels/s2mm.cpp"
+  }
+]
