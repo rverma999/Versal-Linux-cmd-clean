@@ -40,7 +40,8 @@ BASE_PLATFORM ?= ${PLATFORM_REPO_PATHS}/xilinx_vck190_base_202410_1/xilinx_vck19
 
 # Command-line options
 VPP := v++
-AIECC := v++ -c --mode aie
+#AIECC := v++ -c --mode aie -v 0 
+AIECC := v++ -c --mode aie  
 AIESIM := aiesimulator
 X86SIM := x86simulator
 SW_EMU_CMD := ./host_ps_on_x86 a.xclbin
@@ -73,6 +74,9 @@ mult_X ?= 1
 mult_Y ?= 1
 mult_Z ?= 1
 DEBUG_PRINTS ?=0
+
+# Display the values that will be used for mult_X, mult_Y, mult_Z for debugging
+$(info Using mult_X=$(mult_X), mult_Y=$(mult_Y), mult_Z=$(mult_Z), DEBUG_PRINTS=$(DEBUG_PRINTS))
 
 COMMON_FLAGS += -Dmult_X=$(mult_X) -Dmult_Y=$(mult_Y) -Dmult_Z=$(mult_Z) -DDEBUG_PRINTS=$(DEBUG_PRINTS)
 
