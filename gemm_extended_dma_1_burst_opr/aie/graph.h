@@ -33,15 +33,15 @@ public:
 
 	  // input and output PLIOs creation below
 	  for (int i = 0; i < mult_X * mult_Y; i++){
-		  A[i] = input_plio::create(plio_128_bits, "data/matA" + std::to_string(0) + ".txt");
+		  A[i] = input_plio::create(plio_128_bits, "data/matA" + std::to_string(i) + ".txt");
 	  }
 
 	  for (int i = 0; i < mult_Y * mult_Z; i++){
-		  B[i] = input_plio::create(plio_128_bits, "data/matB" + std::to_string(0) + ".txt");
+		  B[i] = input_plio::create(plio_128_bits, "data/matB" + std::to_string(i) + ".txt");
 	  }
 
 	  for (int i = 0; i < mult_X * mult_Z; i++){
-		  C[i] = output_plio::create(plio_128_bits, "data/matC" + std::to_string(0) + ".txt");
+		  C[i] = output_plio::create(plio_128_bits, "data/matC" + std::to_string(i) + ".txt");
 	  }
 
 	  // kernels creation
