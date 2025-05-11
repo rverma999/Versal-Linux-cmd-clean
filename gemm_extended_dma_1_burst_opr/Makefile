@@ -156,8 +156,8 @@ ifeq ($(TARGET),sw_emu)
 	$(VPP) $(VPP_XO_FLAGS) -k mm2s pl_kernels/mm2s.cpp -o mm2s.xo
 else
 	$(VPP) $(VPP_XO_FLAGS) --config pl_kernels/s2mm.cfg
-	$(VPP) $(VPP_XO_FLAGS) --config pl_kernels/mm2s.cfg 
-	$(VPP) $(VPP_XO_FLAGS) --config pl_kernels/mm2s.cfg 
+	$(VPP) $(VPP_XO_FLAGS) --config pl_kernels/mm2s_1.cfg 
+	$(VPP) $(VPP_XO_FLAGS) --config pl_kernels/mm2s_2.cfg 
 endif
 
 
@@ -274,6 +274,6 @@ clean:
 	rm -rf sw/*.log sw/*.xclbin sw/cfg/ sw/launch_hw_emu.sh sw/qemu_dts_files sw/emu_qemu_scripts sw/*.exe sw/_x/ sw/*summary sw/*.o sw/*.elf sw/*.xpe sw/xnwOut sw/Work sw/*.csv sw/*.db sw/*.bin sw/*.BIN sw/*.bif sw/launch_hw_emulator.sh sw/*.txt sw/emulation sw/.Xil ./x86simulator_output
 	rm -rf sw/sd_card sw/sd_card.img sw/*.o ./*.exe sw/qeumu* x86simulator_output/ aiesimulator_output/ s2mm/ mm2s/ hls/
 	rm -rf *.exe data
-	rm -rf pl_kernels/.xo
+	rm -rf pl_kernels/*.xo
 	rm -rf logs
 	rm -rf Work/logs
