@@ -233,6 +233,7 @@ else
 package: guard-PLATFORM_REPO_PATHS guard-IMAGE guard-ROOTFS
 	cd ./sw
 	v++ -p -t ${TARGET} \
+                --config ${CONFIG_FILE} \
 		-f ${BASE_PLATFORM} \
 		--package.rootfs=${ROOTFS} \
 		--package.image_format=ext4 \
