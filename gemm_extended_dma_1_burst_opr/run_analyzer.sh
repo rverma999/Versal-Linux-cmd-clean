@@ -12,5 +12,11 @@ make clean
 
 make TARGET=hw_emu all VERBOSE=1 | tee total.log
 
+# Linking
 #v++ -l -t hw_emu --platform /tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm pl_kernels/s2mm.xo pl_kernels/mm2s.xo libadf.a --save-temps -g --config system.cfg -o tutorial.xsa || (echo "task: [xsa] failed error code: $?"; exit 1) 
+
+# PAckage and hw_emu : 
+# make host package run_emu TARGET=hw_emu
+
+
 # vitis_analyzer ./Work/graph.aiecompile_summary
