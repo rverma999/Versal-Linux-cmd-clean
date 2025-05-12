@@ -32,6 +32,7 @@ int main(){
 
 
 	for (int i = 0; i < mult_X * mult_Y; i++){
+                printf("gen_golden :i =%0di mult_X=%0d mult_Y=%0d",i,mult_X,mult_Y);
 		a_file_array[i].open("./data/matA" + std::to_string(i) + ".txt", std::ios::out);
 	}
 
@@ -201,7 +202,10 @@ int main(){
 	delete[] matB;
 	delete[] matC;
 	delete[] chunk_C;
+        
 
+
+        printf("gene_golden_data : returning upon successfully executing"); 
 	return 0;
 
 }
