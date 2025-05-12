@@ -23,7 +23,8 @@ KERNEL := s2mm.cpp mm2s.cpp
 ifeq ($(TARGET),sw_emu)
 	KERNEL_XO := s2mm.xo mm2s.xo
 else
-	KERNEL_XO := pl_kernels/s2mm.xo pl_kernels/mm2s_1.xo pl_kernels/mm2s_2.xo
+#	KERNEL_XO := pl_kernels/s2mm.xo pl_kernels/mm2s_1.xo pl_kernels/mm2s_2.xo
+	KERNEL_XO := pl_kernels/s2mm.xo pl_kernels/mm2s.xo 
 endif
 
 CONFIG_FILE := system.cfg
@@ -156,8 +157,16 @@ ifeq ($(TARGET),sw_emu)
 	$(VPP) $(VPP_XO_FLAGS) -k mm2s pl_kernels/mm2s.cpp -o mm2s.xo
 else
 	$(VPP) $(VPP_XO_FLAGS) --config pl_kernels/s2mm.cfg
-	$(VPP) $(VPP_XO_FLAGS) --config pl_kernels/mm2s_1.cfg 
-	$(VPP) $(VPP_XO_FLAGS) --config pl_kernels/mm2s_2.cfg 
+	$(VPP) $(VPP_XO_FLAGS) --config pl_kernels/mm2s.cfg 
+#	$(VPP) $(VPP_XO_FLAGS) --config pl_kernels/mm2s_2.cfg 
+#	$(VPP) $(VPP_XO_FLAGS) --config pl_kernels/mm2s_1.cfg 
+#	$(VPP) $(VPP_XO_FLAGS) --config pl_kernels/mm2s_2.cfg 
+#	$(VPP) $(VPP_XO_FLAGS) -k s2mm pl_kernels/s2mm.cpp -o s2mm.xo
+#	$(VPP) $(VPP_XO_FLAGS) -k mm2s pl_kernels/mm2s.cpp -o mm2s_1.xo
+#	$(VPP) $(VPP_XO_FLAGS) -k mm2s pl_kernels/mm2s.cpp -o mm2s_2.xo
+#	$(VPP) $(VPP_XO_FLAGS) -k s2mm --config pl_kernels/s2mm.cfg 
+#	$(VPP) $(VPP_XO_FLAGS) -k mm2s --config pl_kernels/mm2s_!.cfg 
+#	$(VPP) $(VPP_XO_FLAGS) -k mm2s --config pl_kernels/mm2s_2.cfg 
 endif
 
 
@@ -277,3 +286,4 @@ clean:
 	rm -rf pl_kernels/*.xo
 	rm -rf logs
 	rm -rf Work/logs
+	mv total.log total.log.last
