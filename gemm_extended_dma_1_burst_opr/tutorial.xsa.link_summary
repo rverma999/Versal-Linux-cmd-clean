@@ -1,0 +1,961 @@
+<ENTRY>
+{
+ "thisFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/tutorial.xsa.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sat May 17 12:55:20 2025",
+ "timestampMillis": "1747511720328",
+ "buildStep": {
+  "cmdId": "12bd939a-a34e-46e4-9d5d-b80c982eed24",
+  "name": "v++",
+  "logFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/link.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2024.1/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -l -t hw_emu --platform /tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm pl_kernels/s2mm.xo pl_kernels/mm2s.xo libadf.a --save-temps -g --config system.cfg -o tutorial.xsa ",
+  "args": [
+   "-l",
+   "-t",
+   "hw_emu",
+   "--platform",
+   "/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm",
+   "pl_kernels/s2mm.xo",
+   "pl_kernels/mm2s.xo",
+   "libadf.a",
+   "--save-temps",
+   "-g",
+   "--config",
+   "system.cfg",
+   "-o",
+   "tutorial.xsa"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/system.cfg",
+    "content": "##\n# Copyright (C) 2023, Advanced Micro Devices, Inc. All rights reserved.\n# SPDX-License-Identifier: X11\n##\n\n[connectivity]\n#nk=mygraph:1:mygraph_1\nnk=mm2s:2:mm2s_1,mm2s_2\n#nk=mm2s:2:mm2s #ERROR: [v++ 60-633] Failed to collect compute units: The number specified and the list of compute units do not match: mm2s:2:mm2s\nnk=s2mm:1:s2mm\n#sc=mm2s_1.s:mygraph.A[0]\n#sc=mm2s_2.s:mygraph.B[0]\n#sc=mygraph.C[0]:s2mm.s\n#sc=mm2s_1.s:A[0]\n#sc=mm2s_2.s:B[0]\n#sc=C[0]:s2mm.s\nsc=mm2s_1.s:ai_engine_0.mygraph_A_0_\nsc=mm2s_2.s:ai_engine_0.mygraph_B_0_\nsc=ai_engine_0.mygraph_C_0_:s2mm.s\n"
+   }
+  ],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:55:20 2025",
+ "timestampMillis": "1747511720328",
+ "status": {
+  "cmdId": "12bd939a-a34e-46e4-9d5d-b80c982eed24",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sat May 17 12:55:21 2025",
+ "timestampMillis": "1747511721832",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_vck190_base_202410_1.xpfm",
+  "hardwareDsa": "hw.xsa",
+  "platformDirectory": "/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW_EMU",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "tutorial",
+    "file": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "s2mm",
+     "file": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/pl_kernels/s2mm.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xo/s2mm/s2mm/cpu_sources/s2mm.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "s2mm"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   },
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "mm2s",
+     "file": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/pl_kernels/mm2s.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xo/mm2s/mm2s/cpu_sources/mm2s.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "mm2s_1",
+     "mm2s_2"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2024.1. SW Build 5074859 on 2024-05-20-23:21:20",
+  "aieInputs": {
+   "base": {
+    "type": "AI_LIBSDF",
+    "name": "libadf",
+    "file": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/libadf.a",
+    "reports": [
+     {
+      "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/aie.partial.aiecompile_summary",
+      "name": "",
+      "fileType": "TEXT",
+      "reportType": "TASK_LOG_SUMMARY",
+      "cmdId": ""
+     },
+     {
+      "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/aie_control_config.json",
+      "name": "",
+      "fileType": "JSON",
+      "reportType": "AIE_CONTROL_CONFIG",
+      "cmdId": ""
+     },
+     {
+      "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/aie.router.soln.json",
+      "name": "",
+      "fileType": "JSON",
+      "reportType": "AIE_ROUTER_SOLUTION",
+      "cmdId": ""
+     },
+     {
+      "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/aie.mapped.json",
+      "name": "",
+      "fileType": "JSON",
+      "reportType": "AIE_GRAPH_MAPPED",
+      "cmdId": ""
+     },
+     {
+      "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/aie.compiler.report.json",
+      "name": "",
+      "fileType": "JSON",
+      "reportType": "AIE_COMPILER_REPORT",
+      "cmdId": ""
+     }
+    ],
+    "uuid": ""
+   },
+   "sources": [],
+   "type": "AI_UKNOWN"
+  }
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat May 17 12:55:21 2025",
+ "timestampMillis": "1747511721854",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/aie_control_config.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONTROL_CONFIG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat May 17 12:55:22 2025",
+ "timestampMillis": "1747511722003",
+ "buildStep": {
+  "cmdId": "57e7faa0-94ef-42d5-ba27-2d462c310f35",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/pl_kernels/s2mm.xo --xo /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/pl_kernels/mm2s.xo -keep /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/.Xil/v++-2975247-waiter/a0/hw.o --config /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/syslinkConfig.ini --xpfm /tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm --target emu --output_dir /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int --temp_dir /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/sys_link",
+  "args": [
+   "--xo",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/pl_kernels/s2mm.xo",
+   "--xo",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/pl_kernels/mm2s.xo",
+   "-keep",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/.Xil/v++-2975247-waiter/a0/hw.o",
+   "--config",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/syslinkConfig.ini",
+   "--xpfm",
+   "/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm",
+   "--target",
+   "emu",
+   "--output_dir",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int",
+   "--temp_dir",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/sys_link"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/syslinkConfig.ini",
+    "content": "nk=mm2s:2:mm2s_1,mm2s_2\nnk=s2mm:1:s2mm\nsc=mm2s_1.s:ai_engine_0.mygraph_A_0_\nsc=mm2s_2.s:ai_engine_0.mygraph_B_0_\nsc=ai_engine_0.mygraph_C_0_:s2mm.s\n\n"
+   }
+  ],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:55:22 2025",
+ "timestampMillis": "1747511722003",
+ "status": {
+  "cmdId": "57e7faa0-94ef-42d5-ba27-2d462c310f35",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:55:34 2025",
+ "timestampMillis": "1747511734006",
+ "status": {
+  "cmdId": "57e7faa0-94ef-42d5-ba27-2d462c310f35",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat May 17 12:55:34 2025",
+ "timestampMillis": "1747511734009",
+ "buildStep": {
+  "cmdId": "3ecafe8d-0639-4d24-97a0-bb19b47d5313",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/sdsl.dat -rtd /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/cf2sw.rtd -nofilter /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/cf2sw_full.rtd -xclbin /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xclbin_orig.xml -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/sdsl.dat",
+   "-rtd",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/cf2sw.rtd",
+   "-nofilter",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/cf2sw_full.rtd",
+   "-xclbin",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xclbin_orig.xml",
+   "-o",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:55:34 2025",
+ "timestampMillis": "1747511734009",
+ "status": {
+  "cmdId": "3ecafe8d-0639-4d24-97a0-bb19b47d5313",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:55:36 2025",
+ "timestampMillis": "1747511736080",
+ "status": {
+  "cmdId": "3ecafe8d-0639-4d24-97a0-bb19b47d5313",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat May 17 12:55:36 2025",
+ "timestampMillis": "1747511736083",
+ "buildStep": {
+  "cmdId": "34f5bea9-b7df-437e-909a-38f05a6f7605",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:55:36 2025",
+ "timestampMillis": "1747511736083",
+ "status": {
+  "cmdId": "34f5bea9-b7df-437e-909a-38f05a6f7605",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat May 17 12:55:36 2025",
+ "timestampMillis": "1747511736203",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:55:36 2025",
+ "timestampMillis": "1747511736204",
+ "status": {
+  "cmdId": "34f5bea9-b7df-437e-909a-38f05a6f7605",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat May 17 12:55:36 2025",
+ "timestampMillis": "1747511736205",
+ "buildStep": {
+  "cmdId": "a87c518e-b49a-457a-8fee-b8cf68741217",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw_emu -f /tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm -s -g --remote_ip_cache /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/.ipcache --output_dir /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int --log_dir /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/logs/link --report_dir /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/reports/link --config /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/vplConfig.ini -k /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link --emulation_mode debug_waveform --no-info --iprepo /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xo/ip_repo/xilinx_com_hls_mm2s_1_0 --iprepo /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xo/ip_repo/xilinx_com_hls_s2mm_1_0 --messageDb /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/run_link/vpl.pb /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw_emu",
+   "-f",
+   "/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm",
+   "-s",
+   "-g",
+   "--remote_ip_cache",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/.ipcache",
+   "--output_dir",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int",
+   "--log_dir",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/logs/link",
+   "--report_dir",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/reports/link",
+   "--config",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/vplConfig.ini",
+   "-k",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link",
+   "--emulation_mode",
+   "debug_waveform",
+   "--no-info",
+   "--iprepo",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xo/ip_repo/xilinx_com_hls_mm2s_1_0",
+   "--iprepo",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xo/ip_repo/xilinx_com_hls_s2mm_1_0",
+   "--messageDb",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/run_link/vpl.pb",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/vplConfig.ini",
+    "content": "[advanced]\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nparam=hw_emu.enableDebugWaveform=1\nparam=hw_emu.enableProfiling=1\nparam=compiler.vppCurrentWorkingDir=/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr\nmisc=BinaryName=tutorial\n\n[connectivity]\nnk=s2mm:1:s2mm\nnk=mm2s:2:mm2s_1,mm2s_2\n\n[vivado]\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\n\n"
+   }
+  ],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:55:36 2025",
+ "timestampMillis": "1747511736206",
+ "status": {
+  "cmdId": "a87c518e-b49a-457a-8fee-b8cf68741217",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sat May 17 12:55:37 2025",
+ "timestampMillis": "1747511737020",
+ "buildStep": {
+  "cmdId": "ef87691e-b633-4252-8f7e-5bad4f12506d",
+  "name": "vpl",
+  "logFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/link.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2024.1/bin/unwrapped/lnx64.o/vpl -t hw_emu -f /tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm -s -g --remote_ip_cache /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/.ipcache --output_dir /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int --log_dir /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/logs/link --report_dir /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/reports/link --config /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/vplConfig.ini -k /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link --emulation_mode debug_waveform --no-info --iprepo /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xo/ip_repo/xilinx_com_hls_mm2s_1_0 --iprepo /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xo/ip_repo/xilinx_com_hls_s2mm_1_0 --messageDb /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/run_link/vpl.pb /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:55:37 2025",
+ "timestampMillis": "1747511737020",
+ "status": {
+  "cmdId": "ef87691e-b633-4252-8f7e-5bad4f12506d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Sat May 17 12:55:39 2025",
+ "timestampMillis": "1747511739341",
+ "vivadoProject": {
+  "openDir": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat May 17 12:55:39 2025",
+ "timestampMillis": "1747511739341",
+ "buildStep": {
+  "cmdId": "58df0a1c-8bf9-4eb7-9efb-98e6ec841908",
+  "name": "vivado",
+  "logFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:55:39 2025",
+ "timestampMillis": "1747511739342",
+ "status": {
+  "cmdId": "58df0a1c-8bf9-4eb7-9efb-98e6ec841908",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat May 17 12:56:07 2025",
+ "timestampMillis": "1747511767274",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/debug_ip_layout.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "DEBUG_IP_LAYOUT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat May 17 12:57:56 2025",
+ "timestampMillis": "1747511876121",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/automation_summary_pre_synthesis.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:34 2025",
+ "timestampMillis": "1747511974198",
+ "status": {
+  "cmdId": "58df0a1c-8bf9-4eb7-9efb-98e6ec841908",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:34 2025",
+ "timestampMillis": "1747511974329",
+ "status": {
+  "cmdId": "ef87691e-b633-4252-8f7e-5bad4f12506d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:34 2025",
+ "timestampMillis": "1747511974343",
+ "status": {
+  "cmdId": "a87c518e-b49a-457a-8fee-b8cf68741217",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat May 17 12:59:34 2025",
+ "timestampMillis": "1747511974345",
+ "buildStep": {
+  "cmdId": "4f427df4-08e8-474f-aebd-b9064b726009",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "rtdgen",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:34 2025",
+ "timestampMillis": "1747511974346",
+ "status": {
+  "cmdId": "4f427df4-08e8-474f-aebd-b9064b726009",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat May 17 12:59:34 2025",
+ "timestampMillis": "1747511974347",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat May 17 12:59:34 2025",
+ "timestampMillis": "1747511974349",
+ "buildStep": {
+  "cmdId": "eb8cbf8f-6ef6-4d2c-a15f-49ed2a29b4c9",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -a /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/address_map.xml -sdsl /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/sdsl.dat -xclbin /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xclbin_orig.xml -rtd /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.rtd -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.xml",
+  "args": [
+   "-a",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/address_map.xml",
+   "-sdsl",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/sdsl.dat",
+   "-xclbin",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/xclbin_orig.xml",
+   "-rtd",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.rtd",
+   "-o",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:34 2025",
+ "timestampMillis": "1747511974349",
+ "status": {
+  "cmdId": "eb8cbf8f-6ef6-4d2c-a15f-49ed2a29b4c9",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:36 2025",
+ "timestampMillis": "1747511976231",
+ "status": {
+  "cmdId": "eb8cbf8f-6ef6-4d2c-a15f-49ed2a29b4c9",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977820",
+ "buildStep": {
+  "cmdId": "f5814f73-f05c-46f9-a7b4-8d1c6db362b9",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeSystemDiagram",
+  "args": [
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.rtd",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/systemDiagramModelSlrBaseAddress.json"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977821",
+ "status": {
+  "cmdId": "f5814f73-f05c-46f9-a7b4-8d1c6db362b9",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977827",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/systemDiagramModelSlrBaseAddress.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977827",
+ "status": {
+  "cmdId": "f5814f73-f05c-46f9-a7b4-8d1c6db362b9",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977828",
+ "buildStep": {
+  "cmdId": "c63d5642-d555-48ee-add0-0551007f582f",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeAutomationSummary",
+  "args": [
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/automation_summary.txt"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977828",
+ "status": {
+  "cmdId": "c63d5642-d555-48ee-add0-0551007f582f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977831",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/automation_summary.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977832",
+ "status": {
+  "cmdId": "c63d5642-d555-48ee-add0-0551007f582f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977832",
+ "status": {
+  "cmdId": "4f427df4-08e8-474f-aebd-b9064b726009",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977839",
+ "buildStep": {
+  "cmdId": "2f76b228-0d01-43a3-a9d2-92c9a87188ad",
+  "name": "xclbinutil",
+  "logFile": "",
+  "commandLine": "xclbinutil --add-section PDI:RAW:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/run_link/../int/vpl_gen_fixed_presynth.pdi --add-section DEBUG_IP_LAYOUT:JSON:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/debug_ip_layout.rtd --add-section BITSTREAM:RAW:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/behav.xse --force --target hw_emu --key-value SYS:dfx_enable:false --add-section :JSON:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial_xml.rtd --add-section BUILD_METADATA:JSON:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.xml --add-section SYSTEM_METADATA:RAW:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/systemDiagramModelSlrBaseAddress.json --add-section AIE_METADATA:JSON:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/aie_control_config.json --key-value SYS:PlatformVBNV:xilinx.com_xd_xilinx_vck190_base_202410_1_202410_1 --output /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.xclbin",
+  "args": [
+   "--add-section",
+   "PDI:RAW:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/run_link/../int/vpl_gen_fixed_presynth.pdi",
+   "--add-section",
+   "DEBUG_IP_LAYOUT:JSON:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/debug_ip_layout.rtd",
+   "--add-section",
+   "BITSTREAM:RAW:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/behav.xse",
+   "--force",
+   "--target",
+   "hw_emu",
+   "--key-value",
+   "SYS:dfx_enable:false",
+   "--add-section",
+   ":JSON:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/systemDiagramModelSlrBaseAddress.json",
+   "--add-section",
+   "AIE_METADATA:JSON:/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/aie_control_config.json",
+   "--key-value",
+   "SYS:PlatformVBNV:xilinx.com_xd_xilinx_vck190_base_202410_1_202410_1",
+   "--output",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977839",
+ "status": {
+  "cmdId": "2f76b228-0d01-43a3-a9d2-92c9a87188ad",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977951",
+ "status": {
+  "cmdId": "2f76b228-0d01-43a3-a9d2-92c9a87188ad",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977952",
+ "buildStep": {
+  "cmdId": "2757c48b-17b7-4060-89f8-dbee13a7dc4e",
+  "name": "xclbinutilinfo",
+  "logFile": "",
+  "commandLine": "xclbinutil --quiet --force --info /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.xclbin.info --input /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.xclbin",
+  "args": [
+   "--quiet",
+   "--force",
+   "--info",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.xclbin.info",
+   "--input",
+   "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/int/tutorial.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:37 2025",
+ "timestampMillis": "1747511977952",
+ "status": {
+  "cmdId": "2757c48b-17b7-4060-89f8-dbee13a7dc4e",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:38 2025",
+ "timestampMillis": "1747511978173",
+ "status": {
+  "cmdId": "2757c48b-17b7-4060-89f8-dbee13a7dc4e",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat May 17 12:59:38 2025",
+ "timestampMillis": "1747511978175",
+ "buildStep": {
+  "cmdId": "c02a2bb9-9c30-4643-9df0-7e5cb1e65f5b",
+  "name": "generate_sc_driver",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:38 2025",
+ "timestampMillis": "1747511978175",
+ "status": {
+  "cmdId": "c02a2bb9-9c30-4643-9df0-7e5cb1e65f5b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:38 2025",
+ "timestampMillis": "1747511978175",
+ "status": {
+  "cmdId": "c02a2bb9-9c30-4643-9df0-7e5cb1e65f5b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat May 17 12:59:40 2025",
+ "timestampMillis": "1747511980401",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat May 17 12:59:40 2025",
+ "timestampMillis": "1747511980402",
+ "status": {
+  "cmdId": "12bd939a-a34e-46e4-9d5d-b80c982eed24",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat May 17 12:59:40 2025",
+ "timestampMillis": "1747511980448",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/reports/link/v++_link_tutorial_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat May 17 12:59:40 2025",
+ "timestampMillis": "1747511980449",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/v++_link_tutorial_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

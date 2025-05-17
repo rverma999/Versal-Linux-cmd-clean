@@ -1,0 +1,111 @@
+{
+  "schema_version": {
+    "major": "1",
+    "minor": "0",
+    "patch": "0"
+  },
+  "debug_ip_layout": {
+    "m_count": "11",
+    "m_debug_ip_data": [
+      {
+        "m_type": "AXI_NOC",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "0",
+        "m_base_address": "0xdeadbeef",
+        "m_name": "CIPS_0/FPD_CCI_NOC_0-cips_noc/S00_AXI-261-261-299.997009"
+      },
+      {
+        "m_type": "AXI_NOC",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "0",
+        "m_base_address": "0xdeadbeef",
+        "m_name": "CIPS_0/FPD_CCI_NOC_1-cips_noc/S01_AXI-261-261-299.997009"
+      },
+      {
+        "m_type": "AXI_NOC",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "0",
+        "m_base_address": "0xdeadbeef",
+        "m_name": "CIPS_0/FPD_CCI_NOC_2-cips_noc/S02_AXI-261-261-299.997009"
+      },
+      {
+        "m_type": "AXI_NOC",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "0",
+        "m_base_address": "0xdeadbeef",
+        "m_name": "CIPS_0/FPD_CCI_NOC_3-cips_noc/S03_AXI-261-261-299.997009"
+      },
+      {
+        "m_type": "AXI_NOC",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "0",
+        "m_base_address": "0xdeadbeef",
+        "m_name": "CIPS_0/FPD_AXI_NOC_0-cips_noc/S04_AXI-5-5-299.997009"
+      },
+      {
+        "m_type": "AXI_NOC",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "0",
+        "m_base_address": "0xdeadbeef",
+        "m_name": "CIPS_0/FPD_AXI_NOC_1-cips_noc/S05_AXI-5-5-299.997009"
+      },
+      {
+        "m_type": "AXI_NOC",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "0",
+        "m_base_address": "0xdeadbeef",
+        "m_name": "CIPS_0/LPD_AXI_NOC_0-cips_noc/S06_AXI-5-5-299.997009"
+      },
+      {
+        "m_type": "AXI_NOC",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "0",
+        "m_base_address": "0xdeadbeef",
+        "m_name": "CIPS_0/PMC_NOC_AXI_0-cips_noc/S07_AXI-15-15-299.997009"
+      },
+      {
+        "m_type": "AXI_NOC",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "0",
+        "m_base_address": "0xdeadbeef",
+        "m_name": "mm2s_1/m_axi_gmem-noc_ddr4/S00_AXI-1192-1192-299.997009"
+      },
+      {
+        "m_type": "AXI_NOC",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "0",
+        "m_base_address": "0xdeadbeef",
+        "m_name": "mm2s_2/m_axi_gmem-noc_ddr4/S01_AXI-1192-1192-299.997009"
+      },
+      {
+        "m_type": "AXI_NOC",
+        "m_index": "0",
+        "m_major": "1",
+        "m_minor": "1",
+        "m_properties": "0",
+        "m_base_address": "0xdeadbeef",
+        "m_name": "s2mm/m_axi_gmem-noc_ddr4/S02_AXI-1192-1192-299.997009"
+      }
+    ]
+  }
+}

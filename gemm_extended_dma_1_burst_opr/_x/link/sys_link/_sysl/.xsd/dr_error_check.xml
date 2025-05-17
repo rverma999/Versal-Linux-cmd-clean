@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xd:component xmlns:xd="http://www.xilinx.com/xd" xd:vendor="xilinx.com" xd:library="xd" xd:name="dr" xd:version="1.00" xd:type="design">
+    <xd:repository>
+    <xd:file xd:name="xd_ip_db.xml"/>
+  </xd:repository>
+    <xd:instance xd:name="xilinx_vck190_base_202410_1" xd:componentRef="xilinx_vck190_base_202410_1">
+    <xd:portConfig xd:intfName="noc_ddr4_S00_AXI" xd:intfType="intf_pins">
+      <xd:parameter xd:name="CONNECTIONS" xd:value="[dict create MC_1 [concat read_bw \{1192\} write_bw \{1192\} read_avg_burst \{8\} write_avg_burst \{8\}]]"/>
+    </xd:portConfig>
+    <xd:portConfig xd:intfName="noc_ddr4_S01_AXI" xd:intfType="intf_pins">
+      <xd:parameter xd:name="CONNECTIONS" xd:value="[dict create MC_2 [concat read_bw \{1192\} write_bw \{1192\} read_avg_burst \{8\} write_avg_burst \{8\}]]"/>
+    </xd:portConfig>
+    <xd:portConfig xd:intfName="noc_ddr4_S02_AXI" xd:intfType="intf_pins">
+      <xd:parameter xd:name="CONNECTIONS" xd:value="[dict create MC_3 [concat read_bw \{1192\} write_bw \{1192\} read_avg_burst \{8\} write_avg_burst \{8\}]]"/>
+    </xd:portConfig>
+  </xd:instance>
+    <xd:instance xd:name="ai_engine_0" xd:componentRef="ai_engine" xd:useExisting="true">
+    <xd:parameter xd:name="NUM_MI_AXIS" xd:value="1"/>
+    <xd:parameter xd:name="NUM_SI_AXIS" xd:value="2"/>
+    <xd:parameter xd:name="NUM_MI_AXI" xd:value="0"/>
+    <xd:parameter xd:name="NUM_CLKS" xd:value="1"/>
+    <xd:parameter xd:name="C_EN_EXT_RST" xd:value="1"/>
+    <xd:portConfig xd:intfName="S00_AXIS" xd:intfType="intf_pins">
+      <xd:parameter xd:name="TDATA_NUM_BYTES" xd:value="16"/>
+      <xd:parameter xd:name="IS_REGISTERED" xd:value="true"/>
+      <xd:parameter xd:name="ME_ANNOTATION" xd:value="mygraph_A_0_" xd:prefix="HDL_ATTRIBUTE"/>
+    </xd:portConfig>
+    <xd:portConfig xd:intfName="S01_AXIS" xd:intfType="intf_pins">
+      <xd:parameter xd:name="TDATA_NUM_BYTES" xd:value="16"/>
+      <xd:parameter xd:name="IS_REGISTERED" xd:value="true"/>
+      <xd:parameter xd:name="ME_ANNOTATION" xd:value="mygraph_B_0_" xd:prefix="HDL_ATTRIBUTE"/>
+    </xd:portConfig>
+    <xd:portConfig xd:intfName="M00_AXIS" xd:intfType="intf_pins">
+      <xd:parameter xd:name="TDATA_NUM_BYTES" xd:value="16"/>
+      <xd:parameter xd:name="IS_REGISTERED" xd:value="true"/>
+      <xd:parameter xd:name="ME_ANNOTATION" xd:value="mygraph_C_0_" xd:prefix="HDL_ATTRIBUTE"/>
+    </xd:portConfig>
+    <xd:portConfig xd:intfName="aclk0" xd:intfType="pins">
+      <xd:parameter xd:name="ASSOCIATED_BUSIF" xd:value=""/>
+    </xd:portConfig>
+  </xd:instance>
+    <xd:instance xd:name="mm2s_1" xd:componentRef="mm2s">
+    <xd:portConfig xd:intfName="m_axi_gmem" xd:intfType="intf_pins"/>
+  </xd:instance>
+    <xd:instance xd:name="mm2s_2" xd:componentRef="mm2s">
+    <xd:portConfig xd:intfName="m_axi_gmem" xd:intfType="intf_pins"/>
+  </xd:instance>
+    <xd:instance xd:name="s2mm" xd:componentRef="s2mm">
+    <xd:portConfig xd:intfName="m_axi_gmem" xd:intfType="intf_pins"/>
+  </xd:instance>
+    <xd:instance xd:name="dwc_ai_engine_0_M00_AXIS" xd:componentRef="axis_dwidth_converter">
+    <xd:parameter xd:name="M_TDATA_NUM_BYTES" xd:value="4"/>
+    <xd:parameter xd:name="S_TDATA_NUM_BYTES" xd:value="16"/>
+  </xd:instance>
+    <xd:instance xd:name="dwc_mm2s_1_s" xd:componentRef="axis_dwidth_converter">
+    <xd:parameter xd:name="M_TDATA_NUM_BYTES" xd:value="16"/>
+    <xd:parameter xd:name="S_TDATA_NUM_BYTES" xd:value="4"/>
+  </xd:instance>
+    <xd:instance xd:name="dwc_mm2s_2_s" xd:componentRef="axis_dwidth_converter">
+    <xd:parameter xd:name="M_TDATA_NUM_BYTES" xd:value="16"/>
+    <xd:parameter xd:name="S_TDATA_NUM_BYTES" xd:value="4"/>
+  </xd:instance>
+    <xd:instance xd:name="axi_intc_cascaded_1_intr_1_interrupt_concat" xd:componentRef="xlconcat">
+    <xd:parameter xd:name="NUM_PORTS" xd:value="32"/>
+  </xd:instance>
+    <xd:instance xd:name="irq_const_tieoff" xd:componentRef="xlconstant">
+    <xd:parameter xd:name="CONST_WIDTH" xd:value="1"/>
+    <xd:parameter xd:name="CONST_VAL" xd:value="0"/>
+  </xd:instance>
+    <xd:connection>
+    <xd:port xd:name="clk_wizard_0_clk_out4_o1_o2" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="aclk" xd:instanceRef="dwc_ai_engine_0_M00_AXIS"/>
+    <xd:port xd:name="aclk" xd:instanceRef="dwc_mm2s_1_s"/>
+    <xd:port xd:name="aclk" xd:instanceRef="dwc_mm2s_2_s"/>
+    <xd:port xd:name="ap_clk" xd:instanceRef="mm2s_1"/>
+    <xd:port xd:name="ap_clk" xd:instanceRef="mm2s_2"/>
+    <xd:port xd:name="ap_clk" xd:instanceRef="s2mm"/>
+    <xd:port xd:name="icn_ctrl_1_aclk2" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="noc_ddr4_aclk0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="aclk0" xd:instanceRef="ai_engine_0"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:port xd:name="psr_312mhz_interconnect_aresetn" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="aresetn" xd:instanceRef="dwc_ai_engine_0_M00_AXIS"/>
+    <xd:port xd:name="aresetn" xd:instanceRef="dwc_mm2s_1_s"/>
+    <xd:port xd:name="aresetn" xd:instanceRef="dwc_mm2s_2_s"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:port xd:name="psr_312mhz_peripheral_aresetn" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="ap_rst_n" xd:instanceRef="mm2s_1"/>
+    <xd:port xd:name="ap_rst_n" xd:instanceRef="mm2s_2"/>
+    <xd:port xd:name="ap_rst_n" xd:instanceRef="s2mm"/>
+    <xd:port xd:name="aresetn0" xd:instanceRef="ai_engine_0"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:busInterface xd:name="icn_ctrl_1_M06_AXI" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:busInterface xd:name="s_axi_control" xd:instanceRef="mm2s_1"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:busInterface xd:name="m_axi_gmem" xd:instanceRef="mm2s_1"/>
+    <xd:busInterface xd:name="noc_ddr4_S00_AXI" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:busInterface xd:name="icn_ctrl_1_M07_AXI" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:busInterface xd:name="s_axi_control" xd:instanceRef="mm2s_2"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:busInterface xd:name="m_axi_gmem" xd:instanceRef="mm2s_2"/>
+    <xd:busInterface xd:name="noc_ddr4_S01_AXI" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:busInterface xd:name="icn_ctrl_1_M08_AXI" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:busInterface xd:name="s_axi_control" xd:instanceRef="s2mm"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:busInterface xd:name="m_axi_gmem" xd:instanceRef="s2mm"/>
+    <xd:busInterface xd:name="noc_ddr4_S02_AXI" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:busInterface xd:name="M00_AXIS" xd:instanceRef="ai_engine_0"/>
+    <xd:busInterface xd:name="S_AXIS" xd:instanceRef="dwc_ai_engine_0_M00_AXIS"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:busInterface xd:name="M_AXIS" xd:instanceRef="dwc_ai_engine_0_M00_AXIS"/>
+    <xd:busInterface xd:name="s" xd:instanceRef="s2mm"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:busInterface xd:name="s" xd:instanceRef="mm2s_1"/>
+    <xd:busInterface xd:name="S_AXIS" xd:instanceRef="dwc_mm2s_1_s"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:busInterface xd:name="M_AXIS" xd:instanceRef="dwc_mm2s_1_s"/>
+    <xd:busInterface xd:name="S00_AXIS" xd:instanceRef="ai_engine_0"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:busInterface xd:name="s" xd:instanceRef="mm2s_2"/>
+    <xd:busInterface xd:name="S_AXIS" xd:instanceRef="dwc_mm2s_2_s"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:busInterface xd:name="M_AXIS" xd:instanceRef="dwc_mm2s_2_s"/>
+    <xd:busInterface xd:name="S01_AXIS" xd:instanceRef="ai_engine_0"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:port xd:name="dout" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="axi_intc_cascaded_1_intr_1" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:port xd:name="interrupt" xd:instanceRef="mm2s_1"/>
+    <xd:port xd:name="In1" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:port xd:name="interrupt" xd:instanceRef="mm2s_2"/>
+    <xd:port xd:name="In0" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:port xd:name="interrupt" xd:instanceRef="s2mm"/>
+    <xd:port xd:name="In2" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+  </xd:connection>
+    <xd:connection>
+    <xd:port xd:name="dout" xd:instanceRef="irq_const_tieoff"/>
+    <xd:port xd:name="In3" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In4" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In5" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In6" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In7" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In8" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In9" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In10" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In11" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In12" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In13" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In14" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In15" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In16" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In17" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In18" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In19" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In20" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In21" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In22" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In23" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In24" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In25" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In26" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In27" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In28" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In29" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In30" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="In31" xd:instanceRef="axi_intc_cascaded_1_intr_1_interrupt_concat"/>
+    <xd:port xd:name="xlconcat_0_In0_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In1_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In2_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In3_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In4_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In5_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In6_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In7_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In8_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In9_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In10_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In11_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In12_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In13_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In14_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In15_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In16_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In17_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In18_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In19_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In20_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In21_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In22_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In23_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In24_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In25_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In26_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In27_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In28_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In29_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+    <xd:port xd:name="xlconcat_0_In30_0" xd:instanceRef="xilinx_vck190_base_202410_1"/>
+  </xd:connection>
+</xd:component>

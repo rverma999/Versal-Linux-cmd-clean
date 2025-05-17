@@ -1,0 +1,181 @@
+====================================================================
+Version:    xcd v2024.1 (64-bit)
+Copyright:  Copyright 1986-2024 Xilinx, Inc. All Rights Reserved.
+Created:    Sat May 17 12:57:56 2025
+====================================================================
+
+1. Kernel and compute unit information
+======================================
+
+Compute Unit: ai_engine_0
+Kernel: ai_engine
+Clock Pins: aclk2, aclk1, aclk0
+Reset Pin: aresetn0
+
+Compute Unit: mm2s_1
+Kernel: mm2s
+Clock Pin: ap_clk
+Reset Pin: ap_rst_n
+
+Compute Unit: mm2s_2
+Kernel: mm2s
+Clock Pin: ap_clk
+Reset Pin: ap_rst_n
+
+Compute Unit: s2mm
+Kernel: s2mm
+Clock Pin: ap_clk
+Reset Pin: ap_rst_n
+
+2. Interface Connections
+========================
+
+IP to Compute Unit
+------------------
+Source Pin: icn_ctrl_1/M06_AXI
+Destination Pin: mm2s_1/s_axi_control
+
+Source Pin: System_DPA/MON_S_AXI
+Destination Pin: mm2s_1/s_axi_control
+
+Source Pin: icn_ctrl_1/M07_AXI
+Destination Pin: mm2s_2/s_axi_control
+
+Source Pin: System_DPA/MON_S_AXI1
+Destination Pin: mm2s_2/s_axi_control
+
+Source Pin: dwc_ai_engine_0_M00_AXIS/M_AXIS
+Destination Pin: s2mm/s
+
+Source Pin: System_DPA/MON_AXIS2
+Destination Pin: s2mm/s
+
+Source Pin: icn_ctrl_1/M08_AXI
+Destination Pin: s2mm/s_axi_control
+
+Source Pin: System_DPA/MON_S_AXI2
+Destination Pin: s2mm/s_axi_control
+
+Source Pin: cips_noc/M00_AXI
+Destination Pin: ai_engine_0/S00_AXI
+
+Source Pin: dwc_mm2s_1_s/M_AXIS
+Destination Pin: ai_engine_0/S00_AXIS
+
+Source Pin: dwc_mm2s_2_s/M_AXIS
+Destination Pin: ai_engine_0/S01_AXIS
+
+Compute Unit to IP
+------------------
+Source Pin: mm2s_1/m_axi_gmem
+Destination Pin: noc_ddr4/S00_AXI
+
+Source Pin: mm2s_1/m_axi_gmem
+Destination Pin: System_DPA/MON_M_AXI
+
+Source Pin: mm2s_1/s
+Destination Pin: dwc_mm2s_1_s/S_AXIS
+
+Source Pin: mm2s_1/s
+Destination Pin: System_DPA/MON_AXIS
+
+Source Pin: mm2s_2/m_axi_gmem
+Destination Pin: noc_ddr4/S01_AXI
+
+Source Pin: mm2s_2/m_axi_gmem
+Destination Pin: System_DPA/MON_M_AXI1
+
+Source Pin: mm2s_2/s
+Destination Pin: dwc_mm2s_2_s/S_AXIS
+
+Source Pin: mm2s_2/s
+Destination Pin: System_DPA/MON_AXIS1
+
+Source Pin: s2mm/m_axi_gmem
+Destination Pin: noc_ddr4/S02_AXI
+
+Source Pin: s2mm/m_axi_gmem
+Destination Pin: System_DPA/MON_M_AXI2
+
+Source Pin: ai_engine_0/M00_AXIS
+Destination Pin: dwc_ai_engine_0_M00_AXIS/S_AXIS
+
+3. Clock Connections
+====================
+
+Compute Unit: mm2s_1
+Clock ID: 2
+Platform Clock Frequency: 312.50 MHz
+Requested Kernel Clock Frequency: 312.50 MHz
+Source Pin: clk_wizard_0/clk_out4_o1_o2
+Destination Pin: mm2s_1/ap_clk
+
+Compute Unit: mm2s_2
+Clock ID: 2
+Platform Clock Frequency: 312.50 MHz
+Requested Kernel Clock Frequency: 312.50 MHz
+Source Pin: clk_wizard_0/clk_out4_o1_o2
+Destination Pin: mm2s_2/ap_clk
+
+Compute Unit: s2mm
+Clock ID: 2
+Platform Clock Frequency: 312.50 MHz
+Requested Kernel Clock Frequency: 312.50 MHz
+Source Pin: clk_wizard_0/clk_out4_o1_o2
+Destination Pin: s2mm/ap_clk
+
+Compute Unit: ai_engine_0
+Clock ID: 2
+Platform Clock Frequency: 312.50 MHz
+Requested Kernel Clock Frequency: 312.50 MHz
+Source Pin: clk_wizard_0/clk_out4_o1_o2
+Destination Pin: ai_engine_0/aclk0
+
+Clock Instance: clk_wizard_0
+Source Pin: CIPS_0/pl0_ref_clk
+Destination Pin: clk_wizard_0/clk_in1
+
+4. Reset Connections
+====================
+
+Compute Unit: mm2s_1
+Source Pin: psr_312mhz/peripheral_aresetn
+Destination Pin: mm2s_1/ap_rst_n
+Associated Clock Pin: mm2s_1/ap_clk
+
+Compute Unit: mm2s_2
+Source Pin: psr_312mhz/peripheral_aresetn
+Destination Pin: mm2s_2/ap_rst_n
+Associated Clock Pin: mm2s_2/ap_clk
+
+Compute Unit: s2mm
+Source Pin: psr_312mhz/peripheral_aresetn
+Destination Pin: s2mm/ap_rst_n
+Associated Clock Pin: s2mm/ap_clk
+
+Compute Unit: ai_engine_0
+Source Pin: psr_312mhz/peripheral_aresetn
+Destination Pin: ai_engine_0/aresetn0
+Associated Clock Pin: ai_engine_0/aclk0
+
+5. Clock Summary
+================
+
+AIE
++-------------+-----------+----------+---------------+------------+---------------+------------+
+| Instance    | Kernel    | PLIO     | Annotated Arg | Clock Port | Compile (MHz) | Link (MHz) |
++-------------+-----------+----------+---------------+------------+---------------+------------+
+| ai_engine_0 | ai_engine | M00_AXIS | mygraph_C_0_  | aclk0      | 312.50        | 312.50     |
+| ai_engine_0 | ai_engine | S00_AXIS | mygraph_A_0_  | aclk0      | 312.50        | 312.50     |
+| ai_engine_0 | ai_engine | S01_AXIS | mygraph_B_0_  | aclk0      | 312.50        | 312.50     |
++-------------+-----------+----------+---------------+------------+---------------+------------+
+
+PL
++----------+--------+------------+---------------+------------+
+| Instance | Kernel | Clock Port | Compile (MHz) | Link (MHz) |
++----------+--------+------------+---------------+------------+
+| mm2s_1   | mm2s   | ap_clk     | 312.50        | 312.50     |
+| mm2s_2   | mm2s   | ap_clk     | 312.50        | 312.50     |
+| s2mm     | s2mm   | ap_clk     | 312.50        | 312.50     |
++----------+--------+------------+---------------+------------+
+
