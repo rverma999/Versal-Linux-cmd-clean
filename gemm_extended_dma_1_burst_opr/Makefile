@@ -53,6 +53,10 @@ AIE_FLAGS += --stacksize=8192
 AIESIM := aiesimulator
 X86SIM := x86simulator
 SW_EMU_CMD := ./host_ps_on_x86 a.xclbin
+
+# if there is an port issue try doing folowing :
+#export ISS_RPC_SERVER_PORT=5457
+
 HW_EMU_CMD := ./launch_hw_emu.sh -aie-sim-options ../aiesimulator_output/aiesim_options.txt -add-env AIE_COMPILER_WORKDIR=../Work 
 
 AIE_INCLUDE_FLAGS := --include "$(XILINX_VITIS)/aietools/include" --include "./aie" --include "./data" --include "./aie/kernels" --include "./" --aie.xlopt=0
@@ -217,11 +221,18 @@ host: guard-CXX guard-SDKTARGETSYSROOT
 	g++ -Wall -c -std=c++17 -D__PS_ENABLE_AIE__ -Wno-int-to-pointer-cast -I${XILINX_XRT}/include -I./ -I../aie -I${XILINX_VITIS}/aietools/include  -o host.o host.cpp
 	g++ *.o -lxrt_coreutil -std=c++17 -L${XILINX_XRT}/lib -o ./host_ps_on_x86
 else
-host: guard-CXX guard-SDKTARGETSYSROOT 
+host: guard-CXX guard-SDKTARGETSYSROOT
+	unset LD_LIBRARY_PATH
+	source /home/wes_2025_r_verma/capstone_project/xilinx-versal-common-v2024.1/environment-setup-cortexa72-cortexa53-xilinx-linux 
+	echo $(CXX)
 	cd ./sw 
 	$(CXX) $(GCC_FLAGS) $(GCC_INCLUDES) -o host.o host.cpp
 	$(CXX) *.o $(GCC_LIB) -std=c++17 -o ${EXECUTABLE}
 	@echo "COMPLETE: Host application created."
+	#cd ./sw && \
+	#g++ -Wall -c -std=c++17 -Wno-int-to-pointer-cast -I/opt/xilinx/xrt/include -I./ -I../aie -o host.o host.cpp && \
+        #g++ host.o -lxrt_coreutil -std=c++17 -L/opt/xilinx/xrt/lib -o host.exe && \
+        #echo "COMPLETE: Host application created for hw_emu."
 endif
 ############################################################################################################################
 
