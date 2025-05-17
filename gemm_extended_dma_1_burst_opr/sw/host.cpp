@@ -72,7 +72,8 @@ int main(int argc, char* argv[])
 	//////////////////////////////////////////	
 	
 	//Obtains the graph handle from the XCLBIN that is loaded into the device
-	auto cghdl = xrt::graph(device,xclbin_uuid,"clipgraph");
+	//auto cghdl = xrt::graph(device,xclbin_uuid,"clipgraph");
+	auto cghdl = xrt::graph(device,xclbin_uuid,"mygraph");
 	
 	printf("graph run\n");
 	//Run th graph for 1 iteration
