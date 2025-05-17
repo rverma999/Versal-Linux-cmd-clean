@@ -1,0 +1,25 @@
+{
+    "Placement": [
+        {
+            "LogicalInstance": "mygraph_A_0_",
+            "PhysicalInstance": [
+                "AIE_PL_X22Y0_AIE_PL_S_AXIS_4"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "mygraph_B_0_",
+            "PhysicalInstance": [
+                "AIE_PL_X22Y0_AIE_PL_S_AXIS_0"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "mygraph_C_0_",
+            "PhysicalInstance": [
+                "AIE_PL_X22Y0_AIE_PL_M_AXIS_0"
+            ],
+            "IsSoft": false
+        }
+    ]
+}

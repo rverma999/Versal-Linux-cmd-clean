@@ -1,0 +1,19 @@
+{
+  "Placement": [
+    {
+      "LogicalInstance" : { "InstanceName" : "ai_engine_0", "PortName" : "S00_AXIS"},
+      "PhysicalInstance" : [{ "name" : "AIE_PL_X22Y0_AIE_PL_S_AXIS_4", "column" : 23, "channel" : 4 },{ "name" : "AIE_PL_X22Y0_AIE_PL_S_AXIS_5", "column" : 23, "channel" : 5 }],
+      "IsSoft" : true
+    },
+    {
+      "LogicalInstance" : { "InstanceName" : "ai_engine_0", "PortName" : "S01_AXIS"},
+      "PhysicalInstance" : [{ "name" : "AIE_PL_X22Y0_AIE_PL_S_AXIS_0", "column" : 23, "channel" : 0 },{ "name" : "AIE_PL_X22Y0_AIE_PL_S_AXIS_1", "column" : 23, "channel" : 1 }],
+      "IsSoft" : true
+    },
+    {
+      "LogicalInstance" : { "InstanceName" : "ai_engine_0", "PortName" : "M00_AXIS"},
+      "PhysicalInstance" : [{ "name" : "AIE_PL_X22Y0_AIE_PL_M_AXIS_0", "column" : 23, "channel" : 0 },{ "name" : "AIE_PL_X22Y0_AIE_PL_M_AXIS_1", "column" : 23, "channel" : 1 }],
+      "IsSoft" : true
+    }
+  ]
+}

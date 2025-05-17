@@ -1,0 +1,88 @@
+{
+  "appId": "root",
+  "device": "xcvc1902",
+  "AIE": {
+    "ai_engine_0": {
+      "annotation": "AIE IP",
+      "logical_device": "${XILINX_VITIS_AIETOOLS}/data/devices/VC1902.json",
+      "aieshimPorts": {
+        "S00_AXIS": {
+          "type": "stream",
+          "direction": "slave",
+          "dataWidth": 8,
+          "busWidth": 128,
+          "parameterIndex": 0,
+          "clkFreq": 312.5,
+          "registeredInterface": true,
+          "traceFile": "data/matA0.txt",
+          "annotation": [
+            "mygraph_A_0_"
+          ],
+          "sdfioName": [
+            "i0_po0"
+          ]
+        },
+        "S01_AXIS": {
+          "type": "stream",
+          "direction": "slave",
+          "dataWidth": 8,
+          "busWidth": 128,
+          "parameterIndex": 0,
+          "clkFreq": 312.5,
+          "registeredInterface": true,
+          "traceFile": "data/matB0.txt",
+          "annotation": [
+            "mygraph_B_0_"
+          ],
+          "sdfioName": [
+            "i1_po0"
+          ]
+        },
+        "M00_AXIS": {
+          "type": "stream",
+          "direction": "master",
+          "dataWidth": 32,
+          "busWidth": 128,
+          "parameterIndex": 0,
+          "clkFreq": 312.5,
+          "registeredInterface": true,
+          "traceFile": "data/matC0.txt",
+          "annotation": [
+            "mygraph_C_0_"
+          ],
+          "sdfioName": [
+            "i2_pi0"
+          ]
+        }
+      }
+    }
+  },
+  "connections": {
+    "net0": {
+      "dstPorts": [
+        {
+          "instName": "ai_engine_0",
+          "portName": "S00_AXIS"
+        }
+      ],
+      "direction": "pl_to_aie"
+    },
+    "net1": {
+      "dstPorts": [
+        {
+          "instName": "ai_engine_0",
+          "portName": "S01_AXIS"
+        }
+      ],
+      "direction": "pl_to_aie"
+    },
+    "net2": {
+      "type": "stream",
+      "srcPort": {
+        "instName": "ai_engine_0",
+        "portName": "M00_AXIS"
+      },
+      "direction": "aie_to_pl"
+    }
+  }
+}

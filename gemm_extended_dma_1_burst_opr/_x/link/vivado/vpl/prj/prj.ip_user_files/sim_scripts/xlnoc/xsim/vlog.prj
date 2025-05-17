@@ -1,0 +1,10 @@
+sv xil_defaultlib --include "/tools/Xilinx/Vivado/2024.1/data/xilinx_vip/include" \
+"../../../bd/xlnoc/ip/xlnoc_snoc_sysc_inst_0/sim/xlnoc_snoc_sysc_inst_0_stub.sv" \
+
+verilog xil_defaultlib --include "/tools/Xilinx/Vivado/2024.1/data/xilinx_vip/include" \
+"../../../bd/xlnoc/sim/xlnoc.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -7,10 +7,12 @@ F_PROJ_ROOT ?= $(shell bash -c 'export MK_PATH=$(MK_PATH); echo $${MK_PATH%/AI_E
 
 PLATFORM_REPO_PATHS := /tools/Xilinx/Vitis/2024.1/base_platforms
 
-ROOTFS ?= /home/z.ma/Downloads/xilinx-versal-common-v2024.1/rootfs.ext4
-IMAGE ?= /home/z.ma/Downloads/xilinx-versal-common-v2024.1/Image
-SDKTARGETSYSROOT ?= /home/z.ma/sdk-versal-2024.1/sysroots/cortexa72-cortexa53-xilinx-linux
-
+#ROOTFS ?= /home/z.ma/Downloads/xilinx-versal-common-v2024.1/rootfs.ext4
+#IMAGE ?= /home/z.ma/Downloads/xilinx-versal-common-v2024.1/Image
+#SDKTARGETSYSROOT ?= /home/z.ma/sdk-versal-2024.1/sysroots/cortexa72-cortexa53-xilinx-linux
+ROOTFS ?= /home/wes_2025_r_verma/capstone_project/xilinx-versal-common-v2024.1/rootfs.ext4
+IMAGE ?= /home/wes_2025_r_verma/capstone_project/xilinx-versal-common-v2024.1/Image
+SDKTARGETSYSROOT ?= /home/wes_2025_r_verma/capstone_project/xilinx-versal-common-v2024.1/sysroots/cortexa72-cortexa53-xilinx-linux
 # Makefile input options
 TARGET := hw_emu
 PFM := tutorial

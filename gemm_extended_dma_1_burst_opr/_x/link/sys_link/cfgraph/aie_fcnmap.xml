@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:repository xmlns:xd="http://www.xilinx.com/xd">
+  <xd:fcnMap xd:fcnName="aieip" xd:componentRef="ai_engine" xd:type="rtl" xd:clockId="2" xd:flow="aie">
+    <xd:arg xd:name="mygraph_A_0_" xd:swRootName="mygraph_A_0_" xd:offset="0x0" xd:dataWidth="128" xd:portInterfaceType="axis" xd:direction="in" xd:busInterfaceRef="S00_AXIS"/>
+    <xd:arg xd:name="mygraph_B_0_" xd:swRootName="mygraph_B_0_" xd:offset="0x0" xd:dataWidth="128" xd:portInterfaceType="axis" xd:direction="in" xd:busInterfaceRef="S01_AXIS"/>
+    <xd:arg xd:name="mygraph_C_0_" xd:swRootName="mygraph_C_0_" xd:offset="0x0" xd:dataWidth="128" xd:portInterfaceType="axis" xd:direction="out" xd:busInterfaceRef="M00_AXIS"/>
+  </xd:fcnMap>
+</xd:repository>
