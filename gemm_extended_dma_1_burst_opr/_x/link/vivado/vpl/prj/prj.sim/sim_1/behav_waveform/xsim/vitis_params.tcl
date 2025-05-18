@@ -1,1 +1,0 @@
-set VITIS_DYNAMIC_REGION_HW_EMU_PATH vitis_design_wrapper_sim_wrapper/vitis_design_wrapper_i/vitis_design_i
