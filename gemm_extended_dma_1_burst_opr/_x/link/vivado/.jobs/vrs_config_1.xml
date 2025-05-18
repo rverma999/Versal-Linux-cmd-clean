@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<Runs Version="1" Minor="0">
-	<Run Id="vpl" LaunchDir="/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/_x/link/vivado/vpl" FlowId="VPL_HW_Emulation" FromStepId="create_project" ToStepId="config_hw_emu.elaborate"/>
-</Runs>
-
