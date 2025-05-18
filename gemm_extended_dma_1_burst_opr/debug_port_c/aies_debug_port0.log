@@ -1,0 +1,13 @@
+Warning: ps_lib_path is empty, And supported simulators are XSIM, RIVIERA, XCELIUM, VCS and QUESTA
+[INFO]: Xpe File: /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/./Work/reports/graph.xpe
+RPC SERVER MESSAGE iss rpc_server available on port 46393
+Running Dispatch Server on port: 34427
+SLAVE STREAM INFO:  | Port Name         | Port Width        | Stream Type       | Channel Index     
+                    | S00_AXIS          | 128               | PL STREAM         | 188, 189          
+                    | S01_AXIS          | 128               | PL STREAM         | 184, 185          
+MASTER STREAM INFO: | Port Name         | Port Width        | Stream Type       | Channel Index     
+                    | M00_AXIS          | 128               | PL STREAM         | 138, 139          
+[INFO]: Enabled Stream Switch Port Latency 
+IP-INFO: AMD recommends using the CSV based file format for simulating PLIO based input and outputs which provides support for enhanced data control. For more details, please refer UG 1076 https://docs.xilinx.com/r/en-US/ug1076-ai-engine-environment/Simulation-Input-and-Output-Data-Streams 
+Port Name           | Type              | Average Throughput
+mygraph_C_0_        | OUT               | 0.000000 MBps     
