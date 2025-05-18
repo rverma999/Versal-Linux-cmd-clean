@@ -1,8 +1,0 @@
-platform=/tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm
-part=xcvc1902-vsva2197-2MP-e-S
-relativeroot=/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr
-original_argv=-c --mode hls --platform /tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm --config pl_kernels/mm2s.cfg 
-
-[hls]
-clock=312.500000Mhz
-
