@@ -173,9 +173,9 @@ void gemm(input_window_int8 * __restrict matA, input_window_int8 * __restrict ma
     aie::tile tile = aie::tile::current();
     cycle_num[0] = tile.cycles();
 
-    //// Double buffering for local memory
-    //alignas(32) int8 local_A[2][MMUL::size_A * (single_K/K_API)];
-    //alignas(32) int8 local_B[2][MMUL::size_B * (single_N/N_API)];
+    // Double buffering for local memory
+    alignas(32) int8 local_A[2][MMUL::size_A * (single_K/K_API)];
+    alignas(32) int8 local_B[2][MMUL::size_B * (single_N/N_API)];
     
     // Initial data copy to buffer 0
     unsigned buf_idx = 0;
