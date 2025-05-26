@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# xsim v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sun May 18 10:42:29 2025
+# Process ID: 3307936
+# Current directory: /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/sw/sim/behav_waveform/xsim
+# Command line: xsim -log simulate.log -mode tcl -source {xsim.dir/vitis_design_wrapper_sim_wrapper_behav/xsim_script.tcl}
+# Log file: /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/sw/sim/behav_waveform/xsim/simulate.log
+# Journal file: /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/sw/sim/behav_waveform/xsim/xsim.jou
+# Running On        :waiter
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 22.04.5 LTS
+# Processor Detail  :AMD Ryzen Threadripper PRO 7985WX 64-Cores
+# CPU Frequency     :1652.872 MHz
+# CPU Physical cores:64
+# CPU Logical cores :128
+# Host memory       :404950 MB
+# Swap memory       :0 MB
+# Total Virtual     :404950 MB
+# Available Virtual :210773 MB
+#-----------------------------------------------------------
+source xsim.dir/vitis_design_wrapper_sim_wrapper_behav/xsim_script.tcl
+source vitis_design_wrapper_sim_wrapper.tcl

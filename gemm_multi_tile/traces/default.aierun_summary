@@ -1,0 +1,187 @@
+<ENTRY>
+{
+ "thisFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/traces/default.aierun_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun May 18 08:44:26 2025",
+ "timestampMillis": "1747583066146",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/Work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sun May 18 08:44:26 2025",
+ "timestampMillis": "1747583066146",
+ "buildStep": {
+  "cmdId": "7712c4f6-dddd-4c95-8501-ec2ea2e84efc",
+  "name": "aiesim",
+  "logFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/AIESimulator.log",
+  "commandLine": "aiesimulator --pkg-dir ./Work --aiearch-version aie --profile --output-dir ./traces --output-time-stamp-only=ns ",
+  "args": [
+   "aiesimulator",
+   "--pkg-dir ./Work",
+   "--aiearch-version aie",
+   "--profile",
+   "--output-dir ./traces",
+   "--output-time-stamp-only=ns"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun May 18 08:44:26 2025",
+ "timestampMillis": "1747583066146",
+ "status": {
+  "cmdId": "7712c4f6-dddd-4c95-8501-ec2ea2e84efc",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sun May 18 08:44:26 2025",
+ "timestampMillis": "1747583066146",
+ "buildSummary": {
+  "hardwarePlatform": "xcvc1902-vsva2197-2MP-e-S",
+  "hardwareDsa": "VC1902",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_AIESIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "",
+     "file": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/Work/temp/graph.json",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/aie/graph.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "AIE",
+    "frequency": 1250,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun May 18 08:44:26 2025",
+ "timestampMillis": "1747583066147",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/AIESim_FIFO_Guidance.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SIM_FIFO_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun May 18 08:44:26 2025",
+ "timestampMillis": "1747583066147",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/AIESim_Guidance.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SIM_MEMORY_ACCESS_VIOLATION_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun May 18 08:44:30 2025",
+ "timestampMillis": "1747583070250",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/traces/profile_funct_23_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun May 18 08:44:30 2025",
+ "timestampMillis": "1747583070250",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/traces/profile_funct_23_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun May 18 08:44:30 2025",
+ "timestampMillis": "1747583070251",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/traces/profile_instr_23_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun May 18 08:44:30 2025",
+ "timestampMillis": "1747583070251",
+ "report": {
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/traces/profile_instr_23_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun May 18 08:44:30 2025",
+ "timestampMillis": "1747583070251",
+ "status": {
+  "cmdId": "7712c4f6-dddd-4c95-8501-ec2ea2e84efc",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
