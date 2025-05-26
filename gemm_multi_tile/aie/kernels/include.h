@@ -13,11 +13,11 @@
 //// In include.h
 
 #ifndef mult_X
-#define mult_X 1  // Default if not provided
+#define mult_X 2  // Default if not provided
 #endif
 
 #ifndef mult_Y
-#define mult_Y 1
+#define mult_Y 2
 #endif
 
 #ifndef mult_Z
@@ -34,7 +34,7 @@
 
 
 // AI Engine API dimensions
-#define M_API 8
+#define M_API 4
 #define K_API 8
 #define N_API 4
 

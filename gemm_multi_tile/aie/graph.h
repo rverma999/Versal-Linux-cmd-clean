@@ -4,6 +4,7 @@
 #include <adf.h>
 #include "kernels.h"
 #include "kernels/include.h"
+#include "multi_tile_implmentation.h"
 
 #if DEBUG_PRINTS
 #define DEBUG_PRINTF(...) printf(__VA_ARGS__)
@@ -47,6 +48,8 @@ public:
 	  // kernels creation
 	  for (int i = 0; i < mult_Y * mult_X * mult_Z; i++){
 		  mat_mul_k[i] = kernel::create(gemm);
+	          // direct the source file of kernels
+		  source(mat_mul_k[i]) = "kernels/kernels.cc";
 	  }
 
 	  //// Single kernel connections
@@ -62,7 +65,8 @@ public:
           for(int i=0;i<mult_Y;i++) {
             for(int j=0;j<mult_X;j++) {
               int krn_indx=i*mult_X+j;
-
+                 
+              printf("i=%0d j=%0d krn_index=%0d",i,j,krn_indx);
 	      // All kernel connections
 	      connect< window<single_M*single_K*1> >  (A[krn_indx].out[0], mat_mul_k[krn_indx].in[0]);
 	      connect< window<single_K*single_N*1> >  (B[krn_indx].out[0], mat_mul_k[krn_indx].in[1]);
@@ -75,10 +79,6 @@ public:
 	      runtime<ratio>(mat_mul_k[krn_indx]) = 1.0;
 
 	    }
-	  }
-	  // direct the source file of kernels
-	  for (int i = 0; i < mult_Y * mult_X * mult_Z; i++){
-		  source(mat_mul_k[i]) = "kernels/kernels.cc";
 	  }
 
   }
