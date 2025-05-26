@@ -48,7 +48,8 @@ VPP := v++
 AIECC := v++ -c --mode aie  
 AIE_FLAGS += -R=2 
 AIE_FLAGS += --heapsize=8192
-AIE_FLAGS += --stacksize=8192 
+#AIE_FLAGS += --stacksize=8192 
+AIE_FLAGS += --stacksize=16384 
 #AIECC := v++ -c --mode aie  
 AIESIM := aiesimulator
 X86SIM := x86simulator
@@ -184,6 +185,8 @@ ifeq ($(TARGET),sw_emu)
 	$(X86SIM) --pkg-dir=./Work
 else
 	$(AIESIM) --profile --dump-vcd=tutorial --pkg-dir=./Work
+	grep -v '^T' "aiesimulator_output/data/matC0.txt" > "data/matC0_sim.txt"
+	diff -w "data/matC0_sim.txt" "data/matC0.txt" > /dev/null  && echo "\n\n Success: Outputs match\n\n" || echo "\n\nError: Output does not match\n\n"
 endif 
 
 run_sim: golden aie sim
@@ -222,7 +225,7 @@ host: guard-CXX guard-SDKTARGETSYSROOT
 	g++ *.o -lxrt_coreutil -std=c++17 -L${XILINX_XRT}/lib -o ./host_ps_on_x86
 else
 host: guard-CXX guard-SDKTARGETSYSROOT
-	unset LD_LIBRARY_PATH
+	unset $(LD_LIBRARY_PATH)
 	source /home/wes_2025_r_verma/capstone_project/xilinx-versal-common-v2024.1/environment-setup-cortexa72-cortexa53-xilinx-linux 
 	echo $(CXX)
 	cd ./sw 
@@ -284,6 +287,8 @@ else
 ifeq (${TARGET},hw_emu)
 	cd ./sw
 	$(HW_EMU_CMD)
+	grep -v '^T' "aiesimulator_output/data/matC0.txt" > "data/matC0_sim.txt"
+	diff -w "data/matC0_sim.txt" "data/matC0.txt" > /dev/null  && echo "\n\n Success: Outputs match\n\n" || echo "\n\nError: Output does not match\n\n"
 else
 	@echo "Hardware build, no emulation executed."
 endif

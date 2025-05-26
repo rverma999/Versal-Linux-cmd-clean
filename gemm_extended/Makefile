@@ -40,8 +40,13 @@ BASE_PLATFORM ?= ${PLATFORM_REPO_PATHS}/xilinx_vck190_base_202410_1/xilinx_vck19
 
 # Command-line options
 VPP := v++
-#AIECC := v++ -c --mode aie -v 0 
+#AIECC := v++ -c --mode aie -v 2 --heapsize=8192 --stacksize=8192
+#AIECC := v++ -c --mode aie --log-level 5 
 AIECC := v++ -c --mode aie  
+AIE_FLAGS += -R=2 
+AIE_FLAGS += --heapsize=8192
+AIE_FLAGS += --stacksize=8192 
+#AIECC := v++ -c --mode aie  
 AIESIM := aiesimulator
 X86SIM := x86simulator
 SW_EMU_CMD := ./host_ps_on_x86 a.xclbin
@@ -169,7 +174,8 @@ run_sim: golden aie sim
 analyze: run_sim
 	vitis_analyzer -a aiesimulator_output/default.aierun_summary
 
-golden: generate_golden_int8.cpp aie/kernels/include.h
+#golden: generate_golden_int8.cpp aie/kernels/include.h
+golden: generate_golden_int8.cpp 
 	mkdir -p data
 	g++ -o generate_golden_int8.exe generate_golden_int8.cpp
 	./generate_golden_int8.exe

@@ -1,6 +1,6 @@
 <ENTRY>
 {
- "thisFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/mm2s.hlscompile_summary",
+ "thisFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/mm2s.hlscompile_summary",
  "connectId": "",
  "serverToken": "",
  "timestamp": "0"
@@ -9,12 +9,12 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Sun May 18 18:29:55 2025",
- "timestampMillis": "1747618195977",
+ "dateTimestamp": "Mon May 26 12:56:21 2025",
+ "timestampMillis": "1748289381838",
  "buildStep": {
-  "cmdId": "5b09a08e-519f-47a6-9e5c-02232be6a377",
+  "cmdId": "b3be010f-6ca4-4079-92a0-cb986f3fdb8f",
   "name": "v++",
-  "logFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/logs/mm2s.steps.log",
+  "logFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/logs/mm2s.steps.log",
   "commandLine": "/tools/Xilinx/Vitis/2024.1/bin/unwrapped/lnx64.o/v++  -c --mode hls --platform /tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm --config pl_kernels/mm2s.cfg ",
   "args": [
    "-c",
@@ -27,21 +27,21 @@
   ],
   "iniFiles": [
    {
-    "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/pl_kernels/mm2s.cfg",
+    "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/pl_kernels/mm2s.cfg",
     "content": "[hls]\nflow_target=vitis\nsyn.file=mm2s.cpp\nsyn.cflags=-I.\nsyn.top=mm2s\npackage.ip.name=mm2s\npackage.output.syn = true\npackage.output.format=xo\npackage.output.file=mm2s.xo\n"
    }
   ],
-  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile"
  }
 }
 </ENTRY>
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sun May 18 18:29:55 2025",
- "timestampMillis": "1747618195977",
+ "dateTimestamp": "Mon May 26 12:56:21 2025",
+ "timestampMillis": "1748289381838",
  "status": {
-  "cmdId": "5b09a08e-519f-47a6-9e5c-02232be6a377",
+  "cmdId": "b3be010f-6ca4-4079-92a0-cb986f3fdb8f",
   "state": "CS_RUNNING"
  }
 }
@@ -49,8 +49,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Sun May 18 18:29:59 2025",
- "timestampMillis": "1747618199018",
+ "dateTimestamp": "Mon May 26 12:56:26 2025",
+ "timestampMillis": "1748289386866",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -64,12 +64,12 @@
     "base": {
      "type": "KERNEL",
      "name": "mm2s",
-     "file": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/pl_kernels/mm2s.xo",
+     "file": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/pl_kernels/mm2s.xo",
      "reports": [],
      "uuid": ""
     },
     "sources": [
-     "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/pl_kernels/mm2s.cpp"
+     "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/pl_kernels/mm2s.cpp"
     ],
     "psSources": [],
     "cuNames": [],
@@ -85,26 +85,26 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sun May 18 18:29:59 2025",
- "timestampMillis": "1747618199018",
+ "dateTimestamp": "Mon May 26 12:56:26 2025",
+ "timestampMillis": "1748289386867",
  "buildStep": {
-  "cmdId": "d424b0e0-16ae-492e-becc-9ba4e95764db",
+  "cmdId": "b8f790dc-6f55-4c71-a741-35e7d66ec233",
   "name": "csynth_design",
-  "logFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls/hls.log",
+  "logFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls/hls.log",
   "commandLine": "csynth_design",
   "args": [],
   "iniFiles": [],
-  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile"
  }
 }
 </ENTRY>
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sun May 18 18:29:59 2025",
- "timestampMillis": "1747618199018",
+ "dateTimestamp": "Mon May 26 12:56:26 2025",
+ "timestampMillis": "1748289386867",
  "status": {
-  "cmdId": "d424b0e0-16ae-492e-becc-9ba4e95764db",
+  "cmdId": "b8f790dc-6f55-4c71-a741-35e7d66ec233",
   "state": "CS_RUNNING"
  }
 }
@@ -112,10 +112,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:29:59 2025",
- "timestampMillis": "1747618199019",
+ "dateTimestamp": "Mon May 26 12:56:26 2025",
+ "timestampMillis": "1748289386867",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls/hls_data.json",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls/hls_data.json",
   "name": "",
   "fileType": "JSON",
   "reportType": "HLS_SYNTHESIS",
@@ -126,10 +126,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:29:59 2025",
- "timestampMillis": "1747618199019",
+ "dateTimestamp": "Mon May 26 12:56:26 2025",
+ "timestampMillis": "1748289386867",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls/syn/report/csynth.rpt",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls/syn/report/csynth.rpt",
   "name": "",
   "fileType": "TEXT",
   "reportType": "HLS_SYNTHESIS",
@@ -140,10 +140,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:29:59 2025",
- "timestampMillis": "1747618199019",
+ "dateTimestamp": "Mon May 26 12:56:26 2025",
+ "timestampMillis": "1748289386867",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls/syn/report/csynth.xml",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls/syn/report/csynth.xml",
   "name": "",
   "fileType": "XML",
   "reportType": "HLS_SYNTHESIS",
@@ -154,10 +154,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:30:10 2025",
- "timestampMillis": "1747618210750",
+ "dateTimestamp": "Mon May 26 12:56:42 2025",
+ "timestampMillis": "1748289402646",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls",
   "name": "",
   "fileType": "DIR",
   "reportType": "HLS_DATAFLOW",
@@ -168,10 +168,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:30:10 2025",
- "timestampMillis": "1747618210750",
+ "dateTimestamp": "Mon May 26 12:56:42 2025",
+ "timestampMillis": "1748289402647",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls",
   "name": "",
   "fileType": "DIR",
   "reportType": "HLS_FUNCTION_CALL_GRAPH",
@@ -182,10 +182,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:30:10 2025",
- "timestampMillis": "1747618210751",
+ "dateTimestamp": "Mon May 26 12:56:42 2025",
+ "timestampMillis": "1748289402647",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls",
   "name": "",
   "fileType": "DIR",
   "reportType": "HLS_SCHEDULE",
@@ -196,10 +196,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sun May 18 18:30:10 2025",
- "timestampMillis": "1747618210751",
+ "dateTimestamp": "Mon May 26 12:56:42 2025",
+ "timestampMillis": "1748289402647",
  "status": {
-  "cmdId": "d424b0e0-16ae-492e-becc-9ba4e95764db",
+  "cmdId": "b8f790dc-6f55-4c71-a741-35e7d66ec233",
   "state": "CS_PASSED"
  }
 }
@@ -207,12 +207,12 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sun May 18 18:30:10 2025",
- "timestampMillis": "1747618210751",
+ "dateTimestamp": "Mon May 26 12:56:42 2025",
+ "timestampMillis": "1748289402647",
  "buildStep": {
-  "cmdId": "ded2ff08-f402-41c1-84be-5a59c6c9f6c4",
+  "cmdId": "880d2400-7717-4019-ba57-2062639fa329",
   "name": "export_design",
-  "logFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls/hls.log",
+  "logFile": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls/hls.log",
   "commandLine": "export_design -flow none -format xo",
   "args": [
    "-flow",
@@ -221,17 +221,17 @@
    "xo"
   ],
   "iniFiles": [],
-  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr"
+  "cwd": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile"
  }
 }
 </ENTRY>
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sun May 18 18:30:10 2025",
- "timestampMillis": "1747618210752",
+ "dateTimestamp": "Mon May 26 12:56:42 2025",
+ "timestampMillis": "1748289402648",
  "status": {
-  "cmdId": "ded2ff08-f402-41c1-84be-5a59c6c9f6c4",
+  "cmdId": "880d2400-7717-4019-ba57-2062639fa329",
   "state": "CS_RUNNING"
  }
 }
@@ -239,10 +239,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:30:10 2025",
- "timestampMillis": "1747618210752",
+ "dateTimestamp": "Mon May 26 12:56:42 2025",
+ "timestampMillis": "1748289402648",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls/hls_data.json",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls/hls_data.json",
   "name": "",
   "fileType": "JSON",
   "reportType": "HLS_SYNTHESIS",
@@ -253,10 +253,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:30:10 2025",
- "timestampMillis": "1747618210752",
+ "dateTimestamp": "Mon May 26 12:56:42 2025",
+ "timestampMillis": "1748289402648",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls/syn/report/csynth.rpt",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls/syn/report/csynth.rpt",
   "name": "",
   "fileType": "TEXT",
   "reportType": "HLS_SYNTHESIS",
@@ -267,10 +267,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:30:10 2025",
- "timestampMillis": "1747618210752",
+ "dateTimestamp": "Mon May 26 12:56:42 2025",
+ "timestampMillis": "1748289402648",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls/syn/report/csynth.xml",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls/syn/report/csynth.xml",
   "name": "",
   "fileType": "XML",
   "reportType": "HLS_SYNTHESIS",
@@ -281,10 +281,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:30:28 2025",
- "timestampMillis": "1747618228015",
+ "dateTimestamp": "Mon May 26 12:57:07 2025",
+ "timestampMillis": "1748289427332",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls",
   "name": "",
   "fileType": "DIR",
   "reportType": "HLS_DATAFLOW",
@@ -295,10 +295,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:30:28 2025",
- "timestampMillis": "1747618228015",
+ "dateTimestamp": "Mon May 26 12:57:07 2025",
+ "timestampMillis": "1748289427332",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls",
   "name": "",
   "fileType": "DIR",
   "reportType": "HLS_FUNCTION_CALL_GRAPH",
@@ -309,10 +309,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:30:28 2025",
- "timestampMillis": "1747618228016",
+ "dateTimestamp": "Mon May 26 12:57:07 2025",
+ "timestampMillis": "1748289427333",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/hls",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/hls",
   "name": "",
   "fileType": "DIR",
   "reportType": "HLS_SCHEDULE",
@@ -323,10 +323,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sun May 18 18:30:28 2025",
- "timestampMillis": "1747618228016",
+ "dateTimestamp": "Mon May 26 12:57:07 2025",
+ "timestampMillis": "1748289427333",
  "status": {
-  "cmdId": "ded2ff08-f402-41c1-84be-5a59c6c9f6c4",
+  "cmdId": "880d2400-7717-4019-ba57-2062639fa329",
   "state": "CS_PASSED"
  }
 }
@@ -334,10 +334,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sun May 18 18:30:28 2025",
- "timestampMillis": "1747618228159",
+ "dateTimestamp": "Mon May 26 12:57:07 2025",
+ "timestampMillis": "1748289427568",
  "status": {
-  "cmdId": "5b09a08e-519f-47a6-9e5c-02232be6a377",
+  "cmdId": "b3be010f-6ca4-4079-92a0-cb986f3fdb8f",
   "state": "CS_PASSED"
  }
 }
@@ -345,10 +345,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:30:28 2025",
- "timestampMillis": "1747618228209",
+ "dateTimestamp": "Mon May 26 12:57:07 2025",
+ "timestampMillis": "1748289427635",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/reports/v++_compile_mm2s_guidance.html",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/reports/v++_compile_mm2s_guidance.html",
   "name": "",
   "fileType": "HTML",
   "reportType": "GLOBAL_RULECHECK_GUIDANCE",
@@ -359,10 +359,10 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun May 18 18:30:28 2025",
- "timestampMillis": "1747618228209",
+ "dateTimestamp": "Mon May 26 12:57:07 2025",
+ "timestampMillis": "1748289427635",
  "report": {
-  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/mm2s/reports/.db/v++_compile_mm2s_guidance.pb3",
+  "path": "/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/mm2s/reports/.db/v++_compile_mm2s_guidance.pb3",
   "name": "",
   "fileType": "BINARY_PROTOBUF",
   "reportType": "GLOBAL_RULECHECK_GUIDANCE",

@@ -3407,7 +3407,7 @@ window.onload = function () { addSorting(); }
 <center><h1>Design Guidance Report</h1></center><center><table class="header" border="0">
 <tr><td><b>Copyright</b></td><td>Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.</td></tr>
 <tr><td><b>Tool Version</b></td><td>xcd v.2024.1 (lin64) Build 0 </td></tr>
-<tr><td><b>Date</b></td><td>Sun May 18 18:30:28 2025</td></tr>
+<tr><td><b>Date</b></td><td>Mon May 26 12:57:07 2025</td></tr>
 <tr><td><b>Host</b></td><td>waiter running 64-bit Ubuntu 22.04.5 LTS</td></tr>
 <tr><td><b>Command</b></td><td>/tools/Xilinx/Vitis/2024.1/bin/unwrapped/lnx64.o/v++  -c --mode hls --platform /tools/Xilinx/Vitis/2024.1/base_platforms/xilinx_vck190_base_202410_1/xilinx_vck190_base_202410_1.xpfm --config pl_kernels/mm2s.cfg </td></tr>
 </table></center><br>
@@ -3432,17 +3432,6 @@ window.onload = function () { addSorting(); }
 <th align="left">Categories</th>
 <th align="left" width="350">Details</th>
 <th align="left" width="380">Resolution</th>
-</tr>
-<tr>
-<td align="left">1</td>
-<td align="left">Interface</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.mm2s.Interface</td>
-<td align="left">Multiple burst reads of variable length and bit width 32 in loop 'VITIS_LOOP_27_1'(<a href="file:///home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/pl_kernels/mm2s.cpp#line=27">mm2s.cpp</a>) has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_extended_dma_1_burst_opr/pl_kernels/mm2s.cpp#line=27">mm2s.cpp</a>)
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
 <td align="left">5</td>
@@ -3485,6 +3474,17 @@ window.onload = function () { addSorting(); }
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.mm2s.Throughput</td>
 <td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 77, loop 'VITIS_LOOP_27_1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.mm2s.Interface</td>
+<td align="left">Multiple burst reads of variable length and bit width 32 in loop 'VITIS_LOOP_27_1'(<a href="file:///home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/pl_kernels/mm2s.cpp#line=27">mm2s.cpp</a>) has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/pl_kernels/mm2s.cpp#line=27">mm2s.cpp</a>)
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.1%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>

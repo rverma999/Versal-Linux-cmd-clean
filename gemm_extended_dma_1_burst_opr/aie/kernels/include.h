@@ -28,13 +28,13 @@
 #define DEBUG_PRINT 1
 #endif
 // single kernel dimensions (MxKxN on manuscript)
-#define single_M 16
-#define single_K 32
-#define single_N 16
+#define single_M (16*1)
+#define single_K (32*1)
+#define single_N (16*1)
 
 
 // AI Engine API dimensions
-#define M_API 4
+#define M_API 8
 #define K_API 8
 #define N_API 4
 

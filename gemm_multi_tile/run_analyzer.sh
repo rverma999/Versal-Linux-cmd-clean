@@ -17,6 +17,7 @@ make clean
 #This is running 2 sims ,  first withoug dma and then simualted dma
 #make run_sim all VERBOSE=1  mult_X=1 mult_Y=1 mult_Z=1 DEBUG_PRINTS=1
 
+# FAILS mv total.log total.log.last ;make clean ;  make TARGET=sw_emu golden kernels aie sim VERBOSE=1 | tee total.log
 mv total.log total.log.last ;make clean ;  make TARGET=hw_emu golden kernels aie sim VERBOSE=1 | tee total.log
 #mv total.log total.log.last ;make clean ;  make TARGET=hw_emu all VERBOSE=1 | tee total.log
 

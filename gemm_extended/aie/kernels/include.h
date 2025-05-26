@@ -13,7 +13,7 @@
 //// In include.h
 
 #ifndef mult_X
-#define mult_X 2  // Default if not provided
+#define mult_X 1  // Default if not provided
 #endif
 
 #ifndef mult_Y
@@ -25,7 +25,7 @@
 #endif
 
 #ifndef DEBUG_PRINTS
-#define mDEBUG_PRINT 0
+#define DEBUG_PRINT 1
 #endif
 // single kernel dimensions (MxKxN on manuscript)
 #define single_M 16

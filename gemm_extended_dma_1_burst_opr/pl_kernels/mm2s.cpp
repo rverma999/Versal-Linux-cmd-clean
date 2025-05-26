@@ -64,11 +64,11 @@ void mm2s(ap_int<32>* mem, hls::stream<ap_axis<32, 0, 0, 0>  >& s, int size) {
           }
 	}
          
-        $printf("mm2s: burst_size=i'd%d 'h%0h", burst_size,burst_size);
+        //$printf("mm2s: burst_size=i'd%d 'h%0h", burst_size,burst_size);
 
         //local mem to local buffer 
 	for(int i = 0; i < burst_size; i+=32) {
-
+        //To be udpated
         }
         //Write to  
 	s.write(x);

@@ -305,3 +305,5 @@ clean:
 	rm -rf logs
 	rm -rf Work/logs
 	mv total.log total.log.last
+	rm -r data/*
+	rm -rf sw/sim
