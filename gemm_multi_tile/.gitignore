@@ -15,3 +15,6 @@ data
 _x
 mm2s/hls
 s2mm/hls
+sw/sim
+*.wdg
+*.xsa
