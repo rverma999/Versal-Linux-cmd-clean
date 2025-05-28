@@ -49,34 +49,34 @@ namespace multi_tile {
         return p_a.rows * p_b.cols * K;
     }
     
-    // Calculate input A data range for a specific tile
-    inline std::pair<int, int> get_input_A_range(int tile_row, int tile_col, 
-                                        int M, int K,
-                                        int num_tile_rows, int num_tile_cols) {
-        auto partition = get_partition(tile_row, 0, M, K, num_tile_rows, 1);
-        return {partition.start_row * K, (partition.end_row * K) - 1};
-    }
-    
-    // Calculate input B data range for a specific tile
-    inline std::pair<int, int> get_input_B_range(int tile_row, int tile_col, 
-                                        int K, int N,
-                                        int num_tile_rows, int num_tile_cols) {
-        auto partition = get_partition(0, tile_col, K, N, 1, num_tile_cols);
-        return {partition.start_col, partition.end_col - 1};
-    }
-    
-    // Calculate output data range for a specific tile
-    inline std::pair<int, int> get_output_C_range(int tile_row, int tile_col, 
-                                         int M, int N, int K,
-                                         int num_tile_rows, int num_tile_cols) {
-        auto p_a = get_partition(tile_row, 0, M, K, num_tile_rows, 1);
-        auto p_b = get_partition(0, tile_col, K, N, 1, num_tile_cols);
-        
-        int start_idx = p_a.start_row * N + p_b.start_col;
-        int end_idx = (p_a.end_row - 1) * N + (p_b.end_col - 1);
-        
-        return {start_idx, end_idx};
-    }
+    ////// Calculate input A data range for a specific tile
+    ////inline std::pair<int, int> get_input_A_range(int tile_row, int tile_col, 
+    ////                                    int M, int K,
+    ////                                    int num_tile_rows, int num_tile_cols) {
+    ////    auto partition = get_partition(tile_row, 0, M, K, num_tile_rows, 1);
+    ////    return {partition.start_row * K, (partition.end_row * K) - 1};
+    ////}
+    ////
+    ////// Calculate input B data range for a specific tile
+    ////inline std::pair<int, int> get_input_B_range(int tile_row, int tile_col, 
+    ////                                    int K, int N,
+    ////                                    int num_tile_rows, int num_tile_cols) {
+    ////    auto partition = get_partition(0, tile_col, K, N, 1, num_tile_cols);
+    ////    return {partition.start_col, partition.end_col - 1};
+    ////}
+    ////
+    ////// Calculate output data range for a specific tile
+    ////inline std::pair<int, int> get_output_C_range(int tile_row, int tile_col, 
+    ////                                     int M, int N, int K,
+    ////                                     int num_tile_rows, int num_tile_cols) {
+    ////    auto p_a = get_partition(tile_row, 0, M, K, num_tile_rows, 1);
+    ////    auto p_b = get_partition(0, tile_col, K, N, 1, num_tile_cols);
+    ////    
+    ////    int start_idx = p_a.start_row * N + p_b.start_col;
+    ////    int end_idx = (p_a.end_row - 1) * N + (p_b.end_col - 1);
+    ////    
+    ////    return {start_idx, end_idx};
+    ////}
 }
 
 #endif // MULTI_TILE_HELPER_H
