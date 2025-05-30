@@ -123,10 +123,10 @@ void gemm(input_window_int8 * __restrict matA, input_window_int8 * __restrict ma
 //void vectorized_add(input_window_int32 * __restrict in_1, input_window_int32 * __restrict in_2,
 //						output_window_int32 * __restrict out) {
 //
-////	// for profiling
-//	unsigned long long cycle_num[2];
-//	aie::tile tile = aie::tile::current();
-//	cycle_num[0] = tile.cycles();
+////	//// for profiling
+//	//unsigned long long cycle_num[2];
+//	//aie::tile tile = aie::tile::current();
+//	//cycle_num[0] = tile.cycles();
 //
 //	for (unsigned i=0; i<(single_M*single_N/8); i++)
 ////	chess_prepare_for_pipelining
