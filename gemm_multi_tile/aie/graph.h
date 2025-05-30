@@ -111,7 +111,8 @@ public:
   input_plio  A[mult_X * mult_Y]; //4
   input_plio  B[mult_Y * mult_Z]; //2
   //output_plio C[mult_X * mult_Z]; //2
-  output_plio C[mult_X * mult_Y]; //4
+  //output_plio C[mult_X * mult_Y]; //4
+  //output_plio C[mult_X * mult_Z]; //2
 
   simpleGraph(){
     DEBUG_PRINTF("Creating kernels with mult_X=%d, mult_Y=%d, mult_Z=%d\n",mult_X, mult_Y, mult_Z);
@@ -126,7 +127,8 @@ public:
     }
 
     //for (int i = 0; i < mult_X * mult_Z; i++){
-    for (int i = 0; i < mult_X * mult_Y; i++){
+    //for (int i = 0; i < mult_X * mult_Y; i++){
+    for (int i = 0; i < mult_X * mult_Z; i++){
       C[i] = output_plio::create(plio_128_bits, "data/matC" + std::to_string(i) + ".txt");
     }
 
@@ -143,13 +145,14 @@ public:
         location<kernel>(mat_mul_k[krn_indx]) = tile(i, j);
         
         // Connect inputs and outputs
-        //connect<window<iWINDWO SIZE i>>(source, destination);
+        //connect<window<WINDOW SIZE >>(source, destination);
         connect<window<single_M*single_K*1>>(A[krn_indx].out[0], mat_mul_k[krn_indx].in[0]);
         //connect<window<single_K*single_N*1>>(B[krn_indx].out[0], mat_mul_k[krn_indx].in[1]);
         connect<window<single_K*single_N*1>>(B[j].out[0], mat_mul_k[krn_indx].in[1]);
         //connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], C[krn_indx].in[0]);
         //connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], C[j].in[0]);
-        connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], C[krn_indx].in[0]);
+        //connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], C[krn_indx].in[0]);
+        if(i==0)connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], C[j].in[0]);
         
         // Optimize buffer placement
         not_equal(location<buffer>(mat_mul_k[krn_indx].in[0]), location<buffer>(mat_mul_k[krn_indx].in[1]));

@@ -25,7 +25,7 @@
 #endif
 
 #ifndef DEBUG_PRINTS
-#define DEBUG_PRINT 1
+#define DEBUG_PRINTS 1
 #endif
 // single kernel dimensions (MxKxN on manuscript)
 #define single_M (16*1)
