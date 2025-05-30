@@ -57,9 +57,12 @@ public:
      // }
     
     // Create a 2x2 tile configuration
-    for(int i=0; i<mult_Y; i++) {
-      for(int j=0; j<mult_X; j++) {
-        int krn_indx = i*mult_X+j;
+    //for(int i=0; i<mult_Y; i++) {
+    //  for(int j=0; j<mult_X; j++) {
+    //    int krn_indx = i*mult_X+j;
+    for(int j=0; j<mult_X; j++) {
+      for(int i=0; i<mult_Y; i++) {
+        int krn_indx = j*mult_X+i;
         //krn_indx -0,1,2,3 
         // Create the kernel
         mat_mul_k[krn_indx] = kernel::create(gemm);
@@ -99,20 +102,22 @@ public:
        ////}
        // C0  A0×B0 + A1×B1 (kernels 0,1)
        // C1 : A2×B0 + A3×B1 (kernels 2,3)
-       int acc_idx;
-       int input_idx;
-       
-       if (krn_indx < 2) {
-           // Kernels 0,1 go to accumulator 0
-           acc_idx = 0;
-           input_idx = krn_indx;  // kernel 0→input 0, kernel 1→input 1
-       } else {
-           // Kernels 2,3 go to accumulator 1  
-           acc_idx = 1;
-           input_idx = krn_indx - 2;  // kernel 2→input 0, kernel 3→input 1
-       }
 
-       connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc[acc_idx].in[input_idx]);
+       ////int acc_idx;
+       ////int input_idx;
+       ////
+       ////if (krn_indx < 2) {
+       ////    // Kernels 0,1 go to accumulator 0
+       ////    acc_idx = 0;
+       ////    input_idx = krn_indx;  // kernel 0→input 0, kernel 1→input 1
+       ////} else {
+       ////    // Kernels 2,3 go to accumulator 1  
+       ////    acc_idx = 1;
+       ////    input_idx = krn_indx - 2;  // kernel 2→input 0, kernel 3→input 1
+       ////}
+
+       ////connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc[acc_idx].in[input_idx]);
+       connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc[j].in[i]);
 
 
        //Final accumualator output to outside of AIE 
