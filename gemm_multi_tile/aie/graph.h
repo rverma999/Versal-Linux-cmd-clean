@@ -44,10 +44,12 @@ public:
     // Create accumulator kernels
     for (int i = 0; i < mult_Y; i++) {
         acc[i] = kernel::create(vectorized_add);
-        source(acc[i]) = "aie/kernels/accumulator.cc";
-        runtime<ratio>(acc[i]) = 0.0;
+        source(acc[i]) = "kernels/accumulator.cc";
+        runtime<ratio>(acc[i]) = 1.0;
         // Place accumulators on separate tiles
         location<kernel>(acc[i]) = tile(4,i); // Place after compute tiles
+       //Final accumualator output to outside of AIE 
+       connect<window<single_M*single_N*4>>(acc[i].out[0], C[i].in[0]);
       }
     
     // Create a 2x2 tile configuration
@@ -86,7 +88,7 @@ public:
        }
 
        //Final accumualator output to outside of AIE 
-       connect<window<single_M*single_N*4>>(acc[i].out[0], C[i].in[0]);
+       //connect<window<single_M*single_N*4>>(acc[i].out[0], C[i].in[0]);
         
         // Optimize buffer placement
         not_equal(location<buffer>(mat_mul_k[krn_indx].in[0]), location<buffer>(mat_mul_k[krn_indx].in[1]));
