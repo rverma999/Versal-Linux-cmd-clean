@@ -1,0 +1,201 @@
+                                           AI Engine Simulator
+                                     Version 2024.1 (linux64-bit)
+                                     SW Build 5073938 on 2024-05-20-09:38:44
+                          Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+                          Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+AIEsim feature license is found.
+INFO: Executing config: ./Work/config/scsim_config.json
+[INFO]: If you are running trace or profile, Xilinx recommends to use --xlopt=0. This will give a greater visibility into the design. One can verify --xlopt level in the aiecompiler command line.
+profile data for cores: All
+set use_simple_noc to: 1
+Loading device config from: /tools/Xilinx/Vitis/2024.1/aietools/data/devices/VC1902.json
+ AIE_WORK_DIR = /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/./Work
+Creating kernels with mult_X=2, mult_Y=2, mult_Z=1
+Initializing AIE driver...
+Initializing ADF API...
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+IP-INFO: [ps_i14_ps_main] IP loaded.
+Warning: ps_lib_path is empty, And supported simulators are XSIM, RIVIERA, XCELIUM, VCS and QUESTA
+
+Info: DEVICE FILE: /tools/Xilinx/Vitis/2024.1/aietools/data/devices/VC1902.json
+
+Info: AIE SOLUTION FILE: ./Work/arch/aieshim_solution.aiesol
+[AIESIM_OPTIONS]: aiesim_options file path aiesimulator_output/aiesim_options.txt
+[INFO]: Disable Unused Tiles
+[INFO]: Xpe File: /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/./Work/reports/graph.xpe
+INFO  : Running AIE MTMODEL Simulation with 2 threads
+ISS disables unused tiles
+Optimized ISS Wrapper (R+W), r2p25
+RPC SERVER MESSAGE
+RPC SERVER MESSAGE iss rpc_server available on port 46067
+RPC SERVER MESSAGE
+INFO  : ROWS: 8 COLS: 50
+Running Dispatch Server on port: 41851
+Current Directory=/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile
+--------------------------------------------------------------------------------------------------
+SLAVE STREAM INFO:  | Port Name         | Port Width        | Stream Type       | Channel Index     
+                    | S00_AXIS          | 128               | PL STREAM         | 68, 69            
+                    | S01_AXIS          | 128               | PL STREAM         | 64, 65            
+                    | S02_AXIS          | 128               | PL STREAM         | 60, 61            
+                    | S03_AXIS          | 128               | PL STREAM         | 56, 57            
+                    | S04_AXIS          | 128               | PL STREAM         | 48, 49            
+                    | S05_AXIS          | 128               | PL STREAM         | 52, 53            
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+MASTER STREAM INFO: | Port Name         | Port Width        | Stream Type       | Channel Index     
+                    | M00_AXIS          | 128               | PL STREAM         | 38, 39            
+                    | M01_AXIS          | 128               | PL STREAM         | 40, 41            
+--------------------------------------------------------------------------------------------------
+Enabled fast PM writes.
+Enabled fast DM writes.
+Info: (I702) default timescale unit used for tracing: 1 ps (tutorial.vcd)
+[INFO]: Enabled Stream Switch Port Latency 
+IP-INFO: Starting to send data from file: default case  ./data/matA0.txt
+IP-INFO: AMD recommends using the CSV based file format for simulating PLIO based input and outputs which provides support for enhanced data control. For more details, please refer UG 1076 https://docs.xilinx.com/r/en-US/ug1076-ai-engine-environment/Simulation-Input-and-Output-Data-Streams 
+IP-INFO: Starting to send data from file: default case  ./data/matA1.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA2.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA3.txt
+IP-INFO: Starting to send data from file: default case  ./data/matB0.txt
+IP-INFO: Starting to send data from file: default case  ./data/matB1.txt
+Starting to receive data into file: aiesimulator_output/data/matC0.txt
+Starting to receive data into file: aiesimulator_output/data/matC1.txt
+IP-INFO: [ps_i14_ps_main] IP started.
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/0_0/Release/0_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/0_0/Release/0_0.cmic2_140325509206032 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_1.cm.proc.iss] : Stack range [227328..228351] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 227328
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/0_1/Release/0_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/0_1/Release/0_1.cmic2_140325316116496 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_2.cm.proc.iss] : Stack range [248864..249887] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 248864
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/1_0/Release/1_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/1_0/Release/1_0.cmic2_140325370683408 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Stack range [254496..255519] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 254496
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/1_1/Release/1_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/1_1/Release/1_1.cmic2_140325288833040 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_2.cm.proc.iss] : Stack range [136704..137727] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 136704
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/4_0/Release/4_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/4_0/Release/4_0.cmic2_140325343399952 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_1.cm.proc.iss] : Stack range [169984..171007] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 169984
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/4_1/Release/4_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/4_1/Release/4_1.cmic2_140325253156880 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_2.cm.proc.iss] : Stack range [131104..132127] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 131104
+Loading elfs of graph mygraph...
+Initializing graph mygraph...
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/0_0/Release/0_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/0_0/Release/0_0.cmic2_140325509206032 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_1.cm.proc.iss] : Stack range [227328..228351] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 227328 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/4_1/Release/4_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/4_1/Release/4_1.cmic2_140325253156880 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_2.cm.proc.iss] : Stack range [131104..132127] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 131104 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/1_0/Release/1_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/1_0/Release/1_0.cmic2_140325370683408 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Stack range [254496..255519] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 254496 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/4_0/Release/4_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/4_0/Release/4_0.cmic2_140325343399952 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_1.cm.proc.iss] : Stack range [169984..171007] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 169984 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/0_1/Release/0_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/0_1/Release/0_1.cmic2_140325316116496 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_2.cm.proc.iss] : Stack range [248864..249887] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 248864 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/1_1/Release/1_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile/Work/aie/1_1/Release/1_1.cmic2_140325288833040 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_2.cm.proc.iss] : Stack range [136704..137727] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 136704 : loadprogram (elf)
+Resetting cores of graph mygraph...
+Configuring DMAs of graph mygraph...
+Configuring PL-Interface for graph mygraph...
+Set 10 iterations for the core(s) of graph mygraph
+Enabling core(s) of graph mygraph
+Waiting for core(s) of graph mygraph to finish execution ...
+start=1390, end=1488, Kernel clock cycles=98
+start=1386, end=1491, Kernel clock cycles=105
+start=1394, end=1495, Kernel clock cycles=101
+start=1399, end=1499, Kernel clock cycles=100
+start=1630, end=1723, Kernel clock cycles=93
+start=1638, end=1734, Kernel clock cycles=96
+start=1637, end=1736, Kernel clock cycles=99
+start=1641, end=1739, Kernel clock cycles=98
+start=1869, end=1969, Kernel clock cycles=100
+start=1881, end=1979, Kernel clock cycles=98
+start=1876, end=1980, Kernel clock cycles=104
+start=1880, end=1980, Kernel clock cycles=100
+start=2126, end=2219, Kernel clock cycles=93
+start=2132, end=2227, Kernel clock cycles=95
+start=2132, end=2230, Kernel clock cycles=98
+start=2137, end=2235, Kernel clock cycles=98
+start=2390, end=2489, Kernel clock cycles=99
+start=2396, end=2496, Kernel clock cycles=100
+start=2401, end=2499, Kernel clock cycles=98
+start=2396, end=2500, Kernel clock cycles=104
+start=2654, end=2747, Kernel clock cycles=93
+start=2660, end=2758, Kernel clock cycles=98
+start=2663, end=2759, Kernel clock cycles=96
+start=2665, end=2762, Kernel clock cycles=97
+start=2918, end=3019, Kernel clock cycles=101
+start=2925, end=3023, Kernel clock cycles=98
+start=2929, end=3027, Kernel clock cycles=98
+start=2927, end=3030, Kernel clock cycles=103
+start=3182, end=3275, Kernel clock cycles=93
+start=3193, end=3287, Kernel clock cycles=94
+start=3189, end=3290, Kernel clock cycles=101
+start=3195, end=3294, Kernel clock cycles=99
+start=3446, end=3546, Kernel clock cycles=100
+start=3453, end=3548, Kernel clock cycles=95
+start=3457, end=3552, Kernel clock cycles=95
+start=3458, end=3561, Kernel clock cycles=103
+start=3710, end=3803, Kernel clock cycles=93
+start=3716, end=3809, Kernel clock cycles=93
+start=3721, end=3814, Kernel clock cycles=93
+start=3725, end=3822, Kernel clock cycles=97
+core(s) are done executing
+Waiting for core(s) of graph mygraph to finish execution ...
+core(s) are done executing
+Exiting!
+Cores are done executing but the simulation will run for some more cycles to allow PLIO to be flushed
+generate profile data for all cores
+WARNING : WRN (-2) : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_2.cm.proc.iss] : Execution tracing should be enabled when requesting function details : in function chkapi_function_profiling
+WARNING : WRN (-2) : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_2.cm.proc.iss] : Execution tracing should be enabled when requesting function details : in function chkapi_function_profiling
+WRN :   -2 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_2.cm.proc.iss] : Execution tracing should be enabled when requesting function details : chkapi_function_profiling
+WARNING : WRN (-2) : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_1.cm.proc.iss] : Execution tracing should be enabled when requesting function details : in function chkapi_function_profiling
+WARNING : WRN (-2) : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_1.cm.proc.iss] : Execution tracing should be enabled when requesting function details : in function chkapi_function_profiling
+WRN :   -2 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_1.cm.proc.iss] : Execution tracing should be enabled when requesting function details : chkapi_function_profiling
+WARNING : WRN (-2) : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_1.cm.proc.iss] : Execution tracing should be enabled when requesting function details : in function chkapi_function_profiling
+WARNING : WRN (-2) : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_1.cm.proc.iss] : Execution tracing should be enabled when requesting function details : in function chkapi_function_profiling
+WRN :   -2 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_1.cm.proc.iss] : Execution tracing should be enabled when requesting function details : chkapi_function_profiling
+WARNING : WRN (-2) : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_2.cm.proc.iss] : Execution tracing should be enabled when requesting function details : in function chkapi_function_profiling
+WARNING : WRN (-2) : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_2.cm.proc.iss] : Execution tracing should be enabled when requesting function details : in function chkapi_function_profiling
+WRN :   -2 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_4_2.cm.proc.iss] : Execution tracing should be enabled when requesting function details : chkapi_function_profiling
+WRN :   -2 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_2.cm.proc.iss] : Execution tracing should be enabled when requesting function details : chkapi_function_profiling
+WARNING : WRN (-2) : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_2.cm.proc.iss] : Execution tracing should be enabled when requesting function details : in function chkapi_function_profiling
+WARNING : WRN (-2) : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Execution tracing should be enabled when requesting function details : in function chkapi_function_profiling
+WRN :   -2 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_0_2.cm.proc.iss] : Execution tracing should be enabled when requesting function details : chkapi_function_profiling
+WARNING : WRN (-2) : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Execution tracing should be enabled when requesting function details : in function chkapi_function_profiling
+generate profile data for all cores
+WRN :   -2 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Execution tracing should be enabled when requesting function details : chkapi_function_profiling
+Stopping Simulator.
+
+Info: /OSCI/SystemC: Simulation stopped by user.
+--------------------------------------------------------------------------------------------------
+Port Name           | Type              | Average Throughput
+--------------------------------------------------------------------------------------------------
+mygraph_A_0_        | IN                | 3094.777563 MBps  
+mygraph_A_1_        | IN                | 3094.777563 MBps  
+mygraph_A_2_        | IN                | 3072.491599 MBps  
+mygraph_A_3_        | IN                | 3093.281779 MBps  
+mygraph_B_0_        | IN                | 3065.134100 MBps  
+mygraph_B_1_        | IN                | 2889.390519 MBps  
+mygraph_C_0_        | OUT               | 4861.374858 MBps  
+mygraph_C_1_        | OUT               | 4870.624049 MBps  
+--------------------------------------------------------------------------------------------------
+
+JSON file generated successfully!
+IP-INFO: deleting ip PSIP_ps_i14 
+IP-INFO: deleting packet ip 
+IP-INFO: deleting packet ip 
+IP-INFO: deleting packet ip 
+IP-INFO: deleting packet ip 
+IP-INFO: deleting packet ip 
+IP-INFO: deleting packet ip 
+IP-INFO: deleting packet ip 
+IP-INFO: deleting packet ip 
+[INFO] : Simulation Finished, Sim result: 0 Total Simulation time 7748 ns
+AIEsim feature license is released.
