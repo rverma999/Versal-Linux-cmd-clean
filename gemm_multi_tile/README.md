@@ -86,6 +86,13 @@ In `aie/kernels/include.h`
 | `single_K` | 32 | Inner dimension | Must match across A and B |
 | `single_N` | 16 | Matrix cols per tile | Bigger = wider output |
 
+#define single_M (16*1)  // Matrix rows per tile - each A matrix is 16 rows tall
+#define single_K (32*1)  // Inner dimension - A width (32) = B height (32) for multiplication  
+#define single_N (16*1)  // Matrix cols per tile - each B matrix is 16 columns wide
+
+#define M_API 4          // AIE vector rows processed per cycle (4×8×4 vector block)
+#define K_API 8          // AIE vector inner dimension processed per cycle  
+#define N_API 4          // AIE vector columns processed per cycle (4×8×4 vector block)
 
 ### The Great Index Mix-up of 2024
 Initially, our B matrix connections were all wrong! Kernel 1 was trying to access `B[2]` when only `B[0]` and `B[1]` existed. The fix? A simple modulo operation: `B[krn_indx % mult_Y]`.
