@@ -186,7 +186,13 @@ ifeq ($(TARGET),sw_emu)
 else
 	$(AIESIM) --profile --dump-vcd=tutorial --pkg-dir=./Work
 	grep -v '^T' "aiesimulator_output/data/matC0.txt" > "data/matC0_sim.txt"
-	diff -w "data/matC0_sim.txt" "data/matC0.txt" > /dev/null  && echo "\n\n Success: Outputs match\n\n" || echo "\n\nError: Output does not match\n\n"
+	grep -v '^T' "aiesimulator_output/data/matC1.txt" > "data/matC1_sim.txt"
+	#grep -v '^T' "aiesimulator_output/data/matC2.txt" > "data/matC2_sim.txt"
+	#grep -v '^T' "aiesimulator_output/data/matC3.txt" > "data/matC3_sim.txt"
+	diff -w "data/matC0_sim.txt" "data/matC0.txt" > /dev/null  && echo "\n\n Success: Outputs match for C0 \n\n" || echo "\n\nError: Output C0 does not match\n\n"
+	diff -w "data/matC1_sim.txt" "data/matC1.txt" > /dev/null  && echo "\n\n Success: Outputs match for C1 \n\n" || echo "\n\nError: Output C1 does not match\n\n"
+	#diff -w "data/matC2_sim.txt" "data/matC2.txt" > /dev/null  && echo "\n\n Success: Outputs match for C2 \n\n" || echo "\n\nError: Output C2 does not match\n\n"
+	#diff -w "data/matC3_sim.txt" "data/matC3.txt" > /dev/null  && echo "\n\n Success: Outputs match for C3 \n\n" || echo "\n\nError: Output C3 does not match\n\n"
 endif 
 
 run_sim: golden aie sim
