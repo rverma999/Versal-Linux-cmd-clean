@@ -76,7 +76,7 @@ public:
         //C0-> A0B0 + A3B1 XXX
         //connect<window<single_K*single_N*1>>(B[j].out[0], mat_mul_k[krn_indx].in[1]);
         //C0-> A0B0 + A1B1 , C1= A2B0 + A3B1
-        // compilation error connect<window<single_K*single_N*1>>(B[j*mult_Y+i].out[0], mat_mul_k[krn_indx].in[1]);
+        //connect<window<single_K*single_N*1>>(B[j*mult_Y+i].out[0], mat_mul_k[krn_indx].in[1]);
         connect<window<single_K*single_N*1>>(B[krn_indx % mult_Y].out[0], mat_mul_k[krn_indx].in[1]);
 
 
@@ -85,18 +85,35 @@ public:
         //connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], C[krn_indx].in[0]);
         //connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], C[j].in[0]);
 
-       // Connect outputs to accumulators based on column position
-       // Kernels in column j go to accumulator j
-       // kernels 0,2 -> acc[0], kernels 1,3 -> acc[1]
-       int acc_idx = j ;  // j determines which accumulator
+       ////// Connect outputs to accumulators based on column position
+       ////// Kernels in column j go to accumulator j
+       ////// kernels 0,2 -> acc[0], kernels 1,3 -> acc[1]
+       ////int acc_idx = j ;  // j determines which accumulator
+       ////
+       ////if (i == 0) {
+       ////    // First row kernels connect to first input of accumulator
+       ////    connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc[acc_idx].in[0]);
+       ////} else {
+       ////    // Second row kernels connect to second input of accumulator
+       ////    connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc[acc_idx].in[1]);
+       ////}
+       // C0  A0×B0 + A1×B1 (kernels 0,1)
+       // C1 : A2×B0 + A3×B1 (kernels 2,3)
+       int acc_idx;
+       int input_idx;
        
-       if (i == 0) {
-           // First row kernels connect to first input of accumulator
-           connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc[acc_idx].in[0]);
+       if (krn_indx < 2) {
+           // Kernels 0,1 go to accumulator 0
+           acc_idx = 0;
+           input_idx = krn_indx;  // kernel 0→input 0, kernel 1→input 1
        } else {
-           // Second row kernels connect to second input of accumulator
-           connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc[acc_idx].in[1]);
+           // Kernels 2,3 go to accumulator 1  
+           acc_idx = 1;
+           input_idx = krn_indx - 2;  // kernel 2→input 0, kernel 3→input 1
        }
+
+       connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc[acc_idx].in[input_idx]);
+
 
        //Final accumualator output to outside of AIE 
        //connect<window<single_M*single_N*4>>(acc[i].out[0], C[i].in[0]);
