@@ -47,10 +47,14 @@ public:
         source(acc[i]) = "kernels/accumulator.cc";
         runtime<ratio>(acc[i]) = 1.0;
         // Place accumulators on separate tiles
-        location<kernel>(acc[i]) = tile(4,i); // Place after compute tiles
+        location<kernel>(acc[i]) = tile(2,i); // Place after compute tiles
        //Final accumualator output to outside of AIE 
        connect<window<single_M*single_N*4>>(acc[i].out[0], C[i].in[0]);
       }
+     // for (int i = 0; i < mult_Y; i++) {
+     //  //Final accumualator output to outside of AIE 
+     //  connect<window<single_M*single_N*4>>(acc[i].out[0], C[i].in[0]);
+     // }
     
     // Create a 2x2 tile configuration
     for(int i=0; i<mult_Y; i++) {
@@ -68,7 +72,14 @@ public:
         //connect<window<WINDOW SIZE >>(source, destination);
         connect<window<single_M*single_K*1>>(A[krn_indx].out[0], mat_mul_k[krn_indx].in[0]);
         //connect<window<single_K*single_N*1>>(B[krn_indx].out[0], mat_mul_k[krn_indx].in[1]);
-        connect<window<single_K*single_N*1>>(B[j].out[0], mat_mul_k[krn_indx].in[1]);
+        //THIS WAS giving wrong C0,C1 output, 
+        //C0-> A0B0 + A3B1 XXX
+        //connect<window<single_K*single_N*1>>(B[j].out[0], mat_mul_k[krn_indx].in[1]);
+        //C0-> A0B0 + A1B1 , C1= A2B0 + A3B1
+        // compilation error connect<window<single_K*single_N*1>>(B[j*mult_Y+i].out[0], mat_mul_k[krn_indx].in[1]);
+        connect<window<single_K*single_N*1>>(B[krn_indx % mult_Y].out[0], mat_mul_k[krn_indx].in[1]);
+
+
         //connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], C[krn_indx].in[0]);
         //connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], C[j].in[0]);
         //connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], C[krn_indx].in[0]);
