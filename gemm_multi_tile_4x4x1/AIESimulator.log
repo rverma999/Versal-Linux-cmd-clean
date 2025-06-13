@@ -1,0 +1,226 @@
+                                           AI Engine Simulator
+                                     Version 2024.1 (linux64-bit)
+                                     SW Build 5073938 on 2024-05-20-09:38:44
+                          Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+                          Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+AIEsim feature license is found.
+INFO: Executing config: ./Work/config/scsim_config.json
+[INFO]: If you are running trace or profile, Xilinx recommends to use --xlopt=0. This will give a greater visibility into the design. One can verify --xlopt level in the aiecompiler command line.
+profile data for cores: All
+set use_simple_noc to: 1
+Loading device config from: /tools/Xilinx/Vitis/2024.1/aietools/data/devices/VC1902.json
+ AIE_WORK_DIR = /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/./Work
+Creating kernels with mult_X=4, mult_Y=4, mult_Z=1
+Initializing AIE driver...
+Initializing ADF API...
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+IP-INFO: [ps_i44_ps_main] IP loaded.
+Warning: ps_lib_path is empty, And supported simulators are XSIM, RIVIERA, XCELIUM, VCS and QUESTA
+
+Info: DEVICE FILE: /tools/Xilinx/Vitis/2024.1/aietools/data/devices/VC1902.json
+
+Info: AIE SOLUTION FILE: ./Work/arch/aieshim_solution.aiesol
+[AIESIM_OPTIONS]: aiesim_options file path aiesimulator_output/aiesim_options.txt
+[INFO]: Disable Unused Tiles
+[INFO]: Xpe File: /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/./Work/reports/graph.xpe
+INFO  : Running AIE MTMODEL Simulation with 6 threads
+ISS disables unused tiles
+Optimized ISS Wrapper (R+W), r2p25
+RPC SERVER MESSAGE
+RPC SERVER MESSAGE iss rpc_server available on port 37217
+RPC SERVER MESSAGE
+INFO  : ROWS: 8 COLS: 50
+Running Dispatch Server on port: 39141
+Current Directory=/home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1
+--------------------------------------------------------------------------------------------------
+SLAVE STREAM INFO:  | Port Name         | Port Width        | Stream Type       | Channel Index     
+                    | S00_AXIS          | 128               | PL STREAM         | 288, 289          
+                    | S01_AXIS          | 128               | PL STREAM         | 296, 297          
+                    | S02_AXIS          | 128               | PL STREAM         | 292, 293          
+                    | S03_AXIS          | 128               | PL STREAM         | 300, 301          
+                    | S04_AXIS          | 128               | PL STREAM         | 216, 217          
+                    | S05_AXIS          | 128               | PL STREAM         | 208, 209          
+                    | S06_AXIS          | 128               | PL STREAM         | 204, 205          
+                    | S07_AXIS          | 128               | PL STREAM         | 200, 201          
+                    | S08_AXIS          | 128               | PL STREAM         | 196, 197          
+                    | S09_AXIS          | 128               | PL STREAM         | 192, 193          
+                    | S10_AXIS          | 128               | PL STREAM         | 188, 189          
+                    | S11_AXIS          | 128               | PL STREAM         | 176, 177          
+                    | S12_AXIS          | 128               | PL STREAM         | 100, 101          
+                    | S13_AXIS          | 128               | PL STREAM         | 96, 97            
+                    | S14_AXIS          | 128               | PL STREAM         | 104, 105          
+                    | S15_AXIS          | 128               | PL STREAM         | 108, 109          
+                    | S16_AXIS          | 128               | PL STREAM         | 220, 221          
+                    | S17_AXIS          | 128               | PL STREAM         | 212, 213          
+                    | S18_AXIS          | 128               | PL STREAM         | 184, 185          
+                    | S19_AXIS          | 128               | PL STREAM         | 180, 181          
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+MASTER STREAM INFO: | Port Name         | Port Width        | Stream Type       | Channel Index     
+                    | M00_AXIS          | 128               | PL STREAM         | 216, 217          
+                    | M01_AXIS          | 128               | PL STREAM         | 156, 157          
+                    | M02_AXIS          | 128               | PL STREAM         | 138, 139          
+                    | M03_AXIS          | 128               | PL STREAM         | 72, 73            
+--------------------------------------------------------------------------------------------------
+Enabled fast PM writes.
+Enabled fast DM writes.
+Info: (I702) default timescale unit used for tracing: 1 ps (tutorial.vcd)
+[INFO]: Enabled Stream Switch Port Latency 
+IP-INFO: Starting to send data from file: default case  ./data/matA0.txt
+IP-INFO: AMD recommends using the CSV based file format for simulating PLIO based input and outputs which provides support for enhanced data control. For more details, please refer UG 1076 https://docs.xilinx.com/r/en-US/ug1076-ai-engine-environment/Simulation-Input-and-Output-Data-Streams 
+IP-INFO: Starting to send data from file: default case  ./data/matA1.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA2.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA3.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA4.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA5.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA6.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA7.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA8.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA9.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA10.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA11.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA12.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA13.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA14.txt
+IP-INFO: Starting to send data from file: default case  ./data/matA15.txt
+IP-INFO: Starting to send data from file: default case  ./data/matB0.txt
+IP-INFO: Starting to send data from file: default case  ./data/matB1.txt
+IP-INFO: Starting to send data from file: default case  ./data/matB2.txt
+IP-INFO: Starting to send data from file: default case  ./data/matB3.txt
+Starting to receive data into file: aiesimulator_output/data/matC0.txt
+Starting to receive data into file: aiesimulator_output/data/matC1.txt
+Starting to receive data into file: aiesimulator_output/data/matC2.txt
+Starting to receive data into file: aiesimulator_output/data/matC3.txt
+IP-INFO: [ps_i44_ps_main] IP started.
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/12_0/Release/12_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/12_0/Release/12_0.cmic2_140024293040144 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_1.cm.proc.iss] : Stack range [196640..197663] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 196640
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/12_1/Release/12_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/12_1/Release/12_1.cmic2_140024039096336 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_2.cm.proc.iss] : Stack range [196640..197663] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 196640
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_3.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/12_2/Release/12_2 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/12_2/Release/12_2.cmic2_140023793545232 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_3.cm.proc.iss] : Stack range [139808..140831] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_3.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 139808
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_13_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/13_0/Release/13_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/13_0/Release/13_0.cmic2_140024265756688 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_13_1.cm.proc.iss] : Stack range [201728..202751] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_13_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 201728
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_13_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/13_1/Release/13_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/13_1/Release/13_1.cmic2_140024011812880 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_13_2.cm.proc.iss] : Stack range [140160..141183] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_13_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 140160
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_22_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/22_1/Release/22_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/22_1/Release/22_1.cmic2_140023984529424 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_22_2.cm.proc.iss] : Stack range [163872..164895] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_22_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 163872
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_23_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/23_0/Release/23_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/23_0/Release/23_0.cmic2_140024238473232 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_23_1.cm.proc.iss] : Stack range [183328..184351] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_23_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 183328
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_23_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/23_1/Release/23_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/23_1/Release/23_1.cmic2_140023957245968 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_23_2.cm.proc.iss] : Stack range [163872..164895] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_23_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 163872
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_24_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/24_0/Release/24_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/24_0/Release/24_0.cmic2_140024211189776 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_24_1.cm.proc.iss] : Stack range [210432..211455] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_24_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 210432
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_24_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/24_1/Release/24_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/24_1/Release/24_1.cmic2_140023929962512 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_24_2.cm.proc.iss] : Stack range [164896..165919] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_24_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 164896
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_25_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/25_0/Release/25_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/25_0/Release/25_0.cmic2_140024183906320 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_25_1.cm.proc.iss] : Stack range [233984..235007] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_25_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 233984
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_25_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/25_1/Release/25_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/25_1/Release/25_1.cmic2_140023902679056 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_25_2.cm.proc.iss] : Stack range [183328..184351] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_25_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 183328
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_26_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/26_0/Release/26_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/26_0/Release/26_0.cmic2_140024148230160 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_26_1.cm.proc.iss] : Stack range [255008..256031] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_26_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 255008
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_26_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/26_1/Release/26_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/26_1/Release/26_1.cmic2_140023875395600 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_26_2.cm.proc.iss] : Stack range [145408..146431] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_26_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 145408
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_27_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/27_0/Release/27_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/27_0/Release/27_0.cmic2_140024120946704 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_27_1.cm.proc.iss] : Stack range [168448..169471] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_27_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 168448
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/36_0/Release/36_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/36_0/Release/36_0.cmic2_140024093663248 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_1.cm.proc.iss] : Stack range [213536..214559] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 213536
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/36_1/Release/36_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/36_1/Release/36_1.cmic2_140023848112144 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_2.cm.proc.iss] : Stack range [172064..173087] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 172064
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_3.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/36_2/Release/36_2 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/36_2/Release/36_2.cmic2_2883253056 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_3.cm.proc.iss] : Stack range [131104..132127] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_3.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 131104
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_37_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/37_0/Release/37_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/37_0/Release/37_0.cmic2_140024066379792 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_37_1.cm.proc.iss] : Stack range [183328..184351] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_37_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 183328
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_37_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/37_1/Release/37_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/37_1/Release/37_1.cmic2_140023820828688 -D__tct_tgt__=240112    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_37_2.cm.proc.iss] : Stack range [196640..197663] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_37_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 196640
+Loading elfs of graph mygraph...
+Initializing graph mygraph...
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_24_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/24_0/Release/24_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/24_0/Release/24_0.cmic2_140024211189776 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_24_1.cm.proc.iss] : Stack range [210432..211455] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_24_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 210432 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_25_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/25_1/Release/25_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/25_1/Release/25_1.cmic2_140023902679056 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_25_2.cm.proc.iss] : Stack range [183328..184351] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_25_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 183328 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_3.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/12_2/Release/12_2 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/12_2/Release/12_2.cmic2_140023793545232 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_3.cm.proc.iss] : Stack range [139808..140831] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_3.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 139808 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/12_0/Release/12_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/12_0/Release/12_0.cmic2_140024293040144 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_25_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/25_0/Release/25_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/25_0/Release/25_0.cmic2_140024183906320 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32FileMSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_1.cm.proc.iss] : Stack range [196640..197663] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 196640 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_25_1.cm.proc.iss] : Stack range [233984..235007] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_25_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 233984 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/12_1/Release/12_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/12_1/Release/12_1.cmic2_140024039096336 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_2.cm.proc.iss] : Stack range [196640..197663] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_12_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 196640 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_26_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/26_1/Release/26_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/26_1/Release/26_1.cmic2_140023875395600 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_26_2.cm.proc.iss] : Stack range [145408..146431] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_26_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 145408 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_13_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/13_0/Release/13_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/13_0/Release/13_0.cmic2_140024265756688 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_13_1.cm.proc.iss] : Stack range [201728..202751] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_13_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 201728 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_13_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/13_1/Release/13_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/13_1/Release/13_1.cmic2_140024011812880 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_13_2.cm.proc.iss] : Stack range [140160..141183] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_13_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 140160 : loadprogram (elf)MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_26_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/26_0/Release/26_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/26_0/Release/26_0.cmic2_140024148230160 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_26_1.cm.proc.iss] : Stack range [255008..256031] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_26_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 255008 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_27_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/27_0/Release/27_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/27_0/Release/27_0.cmic2_140024120946704 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_27_1.cm.proc.iss] : Stack range [168448..169471] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_27_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 168448 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_3.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/36_2/Release/36_2 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/36_2/Release/36_2.cmic2_2883253056 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_3.cm.proc.iss] : Stack range [131104..132127] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_3.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 131104 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_23_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/23_0/Release/23_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/23_0/Release/23_0.cmic2_140024238473232 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_23_1.cm.proc.iss] : Stack range [183328..184351] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_23_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 183328 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_22_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/22_1/Release/22_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/22_1/Release/22_1.cmic2_140023984529424 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_22_2.cm.proc.iss] : Stack range [163872..164895] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_22_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 163872 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/36_1/Release/36_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/36_1/Release/36_1.cmic2_140023848112144 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_2.cm.proc.iss] : Stack range [172064..173087] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 172064 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_23_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/23_1/Release/23_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/23_1/Release/23_1.cmic2_140023957245968 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_23_2.cm.proc.iss] : Stack range [163872..164895] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_23_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 163872 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_37_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/37_1/Release/37_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/37_1/Release/37_1.cmic2_140023820828688 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_37_2.cm.proc.iss] : Stack range [196640..197663] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_37_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 196640 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/36_0/Release/36_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/36_0/Release/36_0.cmic2_140024093663248 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_1.cm.proc.iss] : Stack range [213536..214559] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_36_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 213536 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_24_2.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/24_1/Release/24_1 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/24_1/Release/24_1.cmic2_140023929962512 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_24_2.cm.proc.iss] : Stack range [164896..165919] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_24_2.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 164896 : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_37_1.cm.proc.iss] : Disassemble command used: darts -c /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/37_0/Release/37_0 -I/tools/Xilinx/Vitis/2024.1/aietools/data/versal_prod/lib me -o /home/wes_2025_r_verma/capstone_project/Versal-Linux-cmd-clean_0507/gemm_multi_tile_4x4x1/Work/aie/37_0/Release/37_0.cmic2_140024066379792 -D__tct_tgt__=240112    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_37_1.cm.proc.iss] : Stack range [183328..184351] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_37_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 183328 : loadprogram (elf)
+Resetting cores of graph mygraph...
+Configuring DMAs of graph mygraph...
+Configuring PL-Interface for graph mygraph...
+Set 1 iterations for the core(s) of graph mygraph
+Enabling core(s) of graph mygraph
+Waiting for core(s) of graph mygraph to finish execution ...
+double free or corruption (fasttop)
+/tools/Xilinx/Vitis/2024.1/aietools/bin/rdiArgs.sh: line 387: 1186489 Aborted                 (core dumped) "$RDI_PROG" "$@"
