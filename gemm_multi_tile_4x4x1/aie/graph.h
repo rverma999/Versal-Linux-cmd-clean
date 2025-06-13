@@ -96,9 +96,6 @@ public:
             connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc_l1[j*2+1].in[i-2]);
         }
 
-        // Connect L1 to L2 accumulators
-        connect<window<single_M*single_N*4>>(acc_l1[j*2].out[0], acc_l2[j].in[0]);
-        connect<window<single_M*single_N*4>>(acc_l1[j*2+1].out[0], acc_l2[j].in[1]);
 
         // Optimize buffer placement
         not_equal(location<buffer>(mat_mul_k[krn_indx].in[0]), location<buffer>(mat_mul_k[krn_indx].in[1]));
@@ -109,6 +106,9 @@ public:
         
         //DEBUG_PRINTF("Tile[%d,%d]: Work=%lld, Ratio=%f\n", i, j, tile_work, ratio);
       }
+        // Connect L1 to L2 accumulators
+        connect<window<single_M*single_N*4>>(acc_l1[j*2].out[0], acc_l2[j].in[0]);
+        connect<window<single_M*single_N*4>>(acc_l1[j*2+1].out[0], acc_l2[j].in[1]);
     }
   }
 
