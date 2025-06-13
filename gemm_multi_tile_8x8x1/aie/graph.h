@@ -44,7 +44,7 @@ public:
         source(acc[i]) = "kernels/accumulator.cc";
         runtime<ratio>(acc[i]) = 1.0;
         // Place accumulators on separate tiles
-        location<kernel>(acc[i]) = tile(0,8+i); // Place as first column 
+        location<kernel>(acc[i]) = tile(8+i,0); // Opposite of MAtrix convention : its actually cols,row  
        //Final accumualator output to outside of AIE 
        connect<window<single_M*single_N*4>>(acc[i].out[0], C[i].in[0]);
       }
