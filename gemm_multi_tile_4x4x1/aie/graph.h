@@ -15,7 +15,10 @@ using namespace adf;
 class simpleGraph : public adf::graph {
 private:
   kernel mat_mul_k[mult_Y * mult_X * mult_Z];
-  kernel acc[mult_Y];  //4
+  //kernel acc[mult_Y];  //4
+
+  kernel acc_l1[mult_X * 2];  // 8 L1 accumulators (2 per output)
+  kernel acc_l2[mult_X];      // 4 L2 accumulators (1 per output)
 
 public:
   input_plio  A[mult_X * mult_Y]; //16
@@ -38,16 +41,31 @@ public:
       C[i] = output_plio::create(plio_128_bits, "data/matC" + std::to_string(i) + ".txt");
     }
 
-    // Create accumulator kernels
-    for (int i = 0; i < mult_Y; i++) {
-        acc[i] = kernel::create(vectorized_add_4plio);
-        source(acc[i]) = "kernels/accumulator.cc";
-        runtime<ratio>(acc[i]) = 1.0;
-        // Place accumulators on separate tiles
-        //location<kernel>(acc[i]) = tile(8+i,0); // Opposite of MAtrix convention : its actually cols,row  
-       //Final accumualator output to outside of AIE 
-       connect<window<single_M*single_N*4>>(acc[i].out[0], C[i].in[0]);
+    //L1 accumulator
+    for (int i = 0; i < mult_X * 2; i++) {
+        acc_l1[i] = kernel::create(vectorized_add);
+        source(acc_l1[i]) = "kernels/accumulator.cc";
+        runtime<ratio>(acc_l1[i]) = 1.0;
+    }
+
+    // L2 : accumulator kernels
+    for (int i = 0; i < mult_X; i++) {
+        //acc[i] = kernel::create(vectorized_add);
+        //source(acc[i]) = "kernels/accumulator.cc";
+        //runtime<ratio>(acc[i]) = 1.0;
+        //// Place accumulators on separate tiles
+        ////location<kernel>(acc[i]) = tile(8+i,0); // Opposite of MAtrix convention : its actually cols,row  
+        ////Final accumualator output to outside of AIE 
+        //connect<window<single_M*single_N*4>>(acc[i].out[0], C[i].in[0]);
+
+        acc_l2[i] = kernel::create(vectorized_add);
+        source(acc_l2[i]) = "kernels/accumulator.cc";
+        runtime<ratio>(acc_l2[i]) = 1.0;
+        // Final accumulator output to outside of AIE 
+        connect<window<single_M*single_N*4>>(acc_l2[i].out[0], C[i].in[0]);
+
       }
+
 
     // Create a 4x4 tile configuration
     for(int j=0; j<mult_X; j++) { //4 column 
@@ -67,7 +85,20 @@ public:
         connect<window<single_K*single_N*1>>(B[krn_indx % mult_Y].out[0], mat_mul_k[krn_indx].in[1]);
 
 
-       connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc[j].in[i]);
+	//connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc[j].in[i]);
+
+        // Connect to L1 accumulators in pairs
+        if (i < 2) {
+            // First pair (i==0,1) goes to acc_l1[j*2]
+            connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc_l1[j*2].in[i]);
+        } else {
+            // Second pair (=i=2,3) goes to acc_l1[j*2+1]  
+            connect<window<single_M*single_N*4>>(mat_mul_k[krn_indx].out[0], acc_l1[j*2+1].in[i-2]);
+        }
+
+        // Connect L1 to L2 accumulators
+        connect<window<single_M*single_N*4>>(acc_l1[j*2].out[0], acc_l2[j].in[0]);
+        connect<window<single_M*single_N*4>>(acc_l1[j*2+1].out[0], acc_l2[j].in[1]);
 
         // Optimize buffer placement
         not_equal(location<buffer>(mat_mul_k[krn_indx].in[0]), location<buffer>(mat_mul_k[krn_indx].in[1]));
