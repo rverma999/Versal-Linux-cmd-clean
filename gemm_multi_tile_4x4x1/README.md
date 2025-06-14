@@ -9,7 +9,7 @@
 Ever wondered how to make matrix multiplication blazingly fast on specialized hardware? This project shows you exactly that! We take large matrix multiplications and split them across multiple AI Engine tiles, with each tile handling a piece of the puzzle. The magic happens when all tiles work together to produce the final result.
 
 Current Implementation:
-- Matrix Size: 64×64 (16×16 per tile)
+- Matrix Size: 64×128x16 
 - Data Type: INT8 (because AI loves efficiency!)
 - Tiles Used: 20 AIE tiles (16 compute + 4 accumulator)
 - Performance: Optimized for VCK190's 400-tile AI Engine array
@@ -101,10 +101,6 @@ Initially, our B matrix connections were all wrong! Kernel 1 was trying to acces
 
 Lesson Learned: Always check your array bounds in multi-dimensional indexing!
 
-### The Accumulator Confusion Saga  
-We discovered that our beautiful 4×4 GEMM wasn't producing the golden values. After extensive debugging found that kernels were connecting to the wrong accumulators.
-
-The Fix: Proper kernel-to-accumulator mapping based on the golden data generation pattern.
 
 ### The 4-Input Accumulator Challenge
 The 4×4 configuration required 4-input accumulators instead of 2-input ones. We implemented both tree-based (using 2-input accumulators) and direct 4-input accumulator approaches to handle the increased parallelism.
@@ -127,7 +123,6 @@ Scaling Potential on VCK190:
 1. Update `mult_X` and `mult_Y` in `include.h`
 2. Ensure your tile placement doesn't conflict
 3. Update data generation for larger matrices
-4. Consider accumulator input limitations (max 8 inputs)
 5. Test, test, test!
 
 

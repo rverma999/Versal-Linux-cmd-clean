@@ -9,7 +9,7 @@
 Ever wondered how to make matrix multiplication blazingly fast on specialized hardware? This project shows you exactly that! We take large matrix multiplications and split them across multiple AI Engine tiles, with each tile handling a piece of the puzzle. The magic happens when all tiles work together to produce the final result.
 
 Current Implementation:
-- Matrix Size: 32×32 (16×16 per tile)
+- Matrix Size: 32×64x16 
 - Data Type: INT8 (because AI loves efficiency!)
 - Tiles Used: 6 AIE tiles (4 compute + 2 accumulator)
 - Performance: Optimized for VCK190's 400-tile AI Engine array
