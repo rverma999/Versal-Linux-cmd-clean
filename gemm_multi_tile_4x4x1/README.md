@@ -9,42 +9,41 @@
 Ever wondered how to make matrix multiplication blazingly fast on specialized hardware? This project shows you exactly that! We take large matrix multiplications and split them across multiple AI Engine tiles, with each tile handling a piece of the puzzle. The magic happens when all tiles work together to produce the final result.
 
 Current Implementation:
-- Matrix Size: 64×128x16 
+- Matrix Size: 64128x16 
 - Data Type: INT8 (because AI loves efficiency!)
 - Tiles Used: 20 AIE tiles (16 compute + 4 accumulator)
 - Performance: Optimized for VCK190's 400-tile AI Engine array
 
 ### The Mathematics Magic 
-Our 4×4 tiling strategy breaks down a large matrix multiplication C = A × B into:
+Our 44 tiling strategy breaks down a large matrix multiplication C = A × B into:
 
-- C0 = A0×B0 + A1×B1 + A2×B2 + A3×B3 (Accumulator 0 combines kernels 0,1,2,3)
-- C1 = A4×B0 + A5×B1 + A6×B2 + A7×B3 (Accumulator 1 combines kernels 4,5,6,7)
-- C2 = A8×B0 + A9×B1 + A10×B2 + A11×B3 (Accumulator 2 combines kernels 8,9,10,11)
-- C3 = A12×B0 + A13×B1 + A14×B2 + A15×B3 (Accumulator 3 combines kernels 12,13,14,15)
+- C0 = A0B0 + A1×B1 + A2×B2 + A3×B3 (Accumulator 0 combines kernels 0,1,2,3)
+- C1 = A4B0 + A5×B1 + A6×B2 + A7×B3 (Accumulator 1 combines kernels 4,5,6,7)
+- C2 = A8B0 + A9×B1 + A10×B2 + A11×B3 (Accumulator 2 combines kernels 8,9,10,11)
+- C3 = A12B0 + A13×B1 + A14×B2 + A15×B3 (Accumulator 3 combines kernels 12,13,14,15)
 
-Each kernel performs a 16×32 × 32×16 = 16×16 matrix multiplication in parallel!
+Each kernel performs a 1632 × 32×16 = 16×16 matrix multiplication in parallel!
 
 ##  Project Structure
 
 ```
 gemm_multi_tile_4x4x1/
-├── aie/                          # AI Engine Implementation
-│   ├── graph.h                   # Main ADF graph definition
-│   ├── graph.cpp                 # Graph instantiation
-│   ├── kernels/
-│   │   ├── kernels.cc            # GEMM kernel implementation
-│   │   ├── accumulator.cc        # Vector addition for reduction
-│   │   ├── concatenator.cc       # Alternative tile combination
-│   │   └── include.h             # Configuration parameters
-├── pl_kernels/                   # PL Data Movement
-│   ├── mm2s/                     # Memory-to-stream kernel
-│   └── s2mm/                     # Stream-to-memory kernel
-├── data/                         # Test Matrices
-│   ├── matA*.txt                # Input matrix A tiles (16 files)
-│   ├── matB*.txt                # Input matrix B tiles (4 files)
-│   └── matC*.txt                # Golden reference outputs (4 files)
-├── Makefile                      # Build system
-└── README.md                     # You are here!
+── aie/                          # AI Engine Implementation
+   ├── graph.h                   # Main ADF graph definition
+   ├── graph.cpp                 # Graph instantiation
+   ├── kernels/
+   │   ├── kernels.cc            # GEMM kernel implementation
+   │   ├── accumulator.cc        # Vector addition for reduction
+   │   └── include.h             # Configuration parameters
+── pl_kernels/                   # PL Data Movement
+   ├── mm2s/                     # Memory-to-stream kernel
+   └── s2mm/                     # Stream-to-memory kernel
+── data/                         # Test Matrices
+   ├── matA*.txt                # Input matrix A tiles (16 files)
+   ├── matB*.txt                # Input matrix B tiles (4 files)
+   └── matC*.txt                # Golden reference outputs (4 files)
+── Makefile                      # Build system
+── README.md                     # You are here!
 ```
 
 ## Getting Started
@@ -63,7 +62,7 @@ gemm_multi_tile_4x4x1/
 2. source ./run_analyzer 
    #This will generate golden data, then simulate
  
-3. 🎉 Marvel at Your Success!
+3.  Marvel at Your Success!
    You should see: `Success: Outputs match for C0`, `Success: Outputs match for C1`, `Success: Outputs match for C2`, and `Success: Outputs match for C3`
 
 ## Build Targets
@@ -92,9 +91,9 @@ In `aie/kernels/include.h`
 #define single_K (32*1)  // Inner dimension - A width (32) = B height (32) for multiplication  
 #define single_N (16*1)  // Matrix cols per tile - each B matrix is 16 columns wide
 
-#define M_API 4          // AIE vector rows processed per cycle (4×8×4 vector block)
+#define M_API 4          // AIE vector rows processed per cycle (48×4 vector block)
 #define K_API 8          // AIE vector inner dimension processed per cycle  
-#define N_API 4          // AIE vector columns processed per cycle (4×8×4 vector block)
+#define N_API 4          // AIE vector columns processed per cycle (48×4 vector block)
 
 ### The Great Index Mix-up of 2024
 Initially, our B matrix connections were all wrong! Kernel 1 was trying to access `B[2]` when only `B[0]` and `B[1]` existed. The fix? A simple modulo operation: `B[krn_indx % mult_Y]`.
@@ -103,7 +102,7 @@ Lesson Learned: Always check your array bounds in multi-dimensional indexing!
 
 
 ### The 4-Input Accumulator Challenge
-The 4×4 configuration required 4-input accumulators instead of 2-input ones. We implemented both tree-based (using 2-input accumulators) and direct 4-input accumulator approaches to handle the increased parallelism.
+The 44 configuration required 4-input accumulators instead of 2-input ones. We implemented both tree-based (using 2-input accumulators) and direct 4-input accumulator approaches to handle the increased parallelism.
 
 ##  Performance Insights
 
@@ -114,8 +113,8 @@ Our current 20-tile implementation demonstrates:
 
 Scaling Potential on VCK190:
 - Current: 20 tiles (5% of total AIE)
-- Previous: 6 tiles (2×2 configuration)
-- Next Step: 72 tiles (8×8 configuration)
+- Previous: 6 tiles (22 configuration)
+- Next Step: 72 tiles (88 configuration)
 
 ## Contributing & Extending
 
