@@ -9,7 +9,7 @@ simpleGraph mygraph;
 
 int main(void) {
   mygraph.init();
-  mygraph.run(10);
+  mygraph.run(2);
   mygraph.end();
   return 0;
 }

@@ -49,7 +49,7 @@ int main(){
 	srand(time(NULL));
 
 
-	for (int batch = 0; batch < 10; batch++){
+	for (int batch = 0; batch < 2; batch++){
 
 
 		// A matrix
