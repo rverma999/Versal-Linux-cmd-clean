@@ -108,7 +108,6 @@ The 44 configuration required 4-input accumulators instead of 2-input ones. We i
 
 Our current 20-tile implementation demonstrates:
 - Parallel Execution: 16 GEMM operations running simultaneously
-- Efficient Reduction: Hardware-accelerated accumulation with 4-input accumulators
 - Scalability: Easy extension to larger tile arrays
 
 Scaling Potential on VCK190:
