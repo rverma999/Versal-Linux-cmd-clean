@@ -1,10 +1,10 @@
-# Multi-Tile GEMM on AMD Versal AI Engine 🚀
+# Multi-Tile GEMM on AMD Versal AI Engine 
 
  "Journey of a Thousand Matrix Multiplications Begins with a Single Tile" 
  
  This project implementsGeneral Matrix Multiplication (GEMM) on AMD VCK190's AI Engine, demonstrating how multiple AIE tiles can work together to accelerate matrix computations.
 
-## 🎯 What This Project Does
+##  What This Project Does
 
 Ever wondered how to make matrix multiplication blazingly fast on specialized hardware? This project shows you exactly that! We take large matrix multiplications and split them across multiple AI Engine tiles, with each tile handling a piece of the puzzle. The magic happens when all tiles work together to produce the final result.
 
@@ -12,7 +12,7 @@ Current Implementation:
 - Matrix Size: 32×32 (16×16 per tile)
 - Data Type: INT8 (because AI loves efficiency!)
 - Tiles Used: 6 AIE tiles (4 compute + 2 accumulator)
-- Performance: 🔥 Optimized for VCK190's 400-tile AI Engine array
+- Performance: Optimized for VCK190's 400-tile AI Engine array
 
 ### The Mathematics Magic 
 Our 2×2 tiling strategy breaks down a large matrix multiplication C = A × B into:
@@ -45,7 +45,7 @@ gemm_multi_tile/
 └── README.md                     # You are here!
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - AMD Vitis 2024.1 or later
