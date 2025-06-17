@@ -61,7 +61,7 @@ gemm_multi_tile/
 2. source ./run_analyzer 
    #This will generate golden data, then simulate
  
-3. 🎉 Marvel at Your Success!
+3.  Marvel at Your Success!
    You should see: `Success: Outputs match for C0` and `Success: Outputs match for C1`
 
 ## Build Targets
